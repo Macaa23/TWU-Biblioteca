@@ -4,24 +4,28 @@ public class Book {
 
     private String name;
     private String author;
-    private String year;
+    private int year;
     private String ISBN;
     private String language;
     private String publishingHouse;
 
-    public Book(String name, String author, String year) {
+    public Book(String name, String author, int year) {
         this.name = name;
         this.author = author;
         this.year = year;
     }
 
-    public Book(String name, String author, String year, String ISBN, String language, String publishingHouse) {
+    public Book(String name, String author, int year, String ISBN, String language, String publishingHouse) {
         this.name = name;
         this.author = author;
         this.year = year;
         this.ISBN = ISBN;
         this.language = language;
         this.publishingHouse = publishingHouse;
+    }
+
+    public Book() {
+
     }
 
     public String getAuthor() {
@@ -32,7 +36,7 @@ public class Book {
         return this.name;
     }
 
-    public String getYear() {
+    public int getYear() {
         return this.year;
     }
 
