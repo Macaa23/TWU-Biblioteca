@@ -53,4 +53,5 @@ public class BookTest {
 
         assertEquals("2009", theMagicians.getYear());
     }
+
 }
