@@ -35,4 +35,16 @@ public class BibliotecaApp {
         }
         return bookList;
     }
+
+    public String listBooksNames() {
+        String bookList = "";
+        Book tempBook;
+        LinkedList<Book> allBooks;
+        allBooks = bibliotecaAppDao.getBooks();
+        for (int i = 0; i < allBooks.size(); i++){
+            tempBook = allBooks.get(i);
+            bookList+= tempBook.getName()+"\n";
+        }
+        return bookList;
+    }
 }

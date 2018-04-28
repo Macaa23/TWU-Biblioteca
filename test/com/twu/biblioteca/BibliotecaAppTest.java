@@ -71,4 +71,13 @@ public class BibliotecaAppTest {
                 "The Magicians     Lev Grossman     2009\n" +
                 "La Casa de los Espiritus     Isabel Allende     1982\n", bibliotecaApp.listAllBooks());
     }
+
+    @Test
+    public void whenListBooksNamesIsCalled_shouldReturnAListOfBooksByName(){
+
+        when(bibliotecaAppDao.getBooks()).thenReturn(availableBooks);
+        assertEquals("Dracula\n" +
+                "The Magicians\n" +
+                "La Casa de los Espiritus\n", bibliotecaApp.listBooksNames());
+    }
 }
