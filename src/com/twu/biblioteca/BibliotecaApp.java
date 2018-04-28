@@ -10,7 +10,7 @@ public class BibliotecaApp {
 
         BibliotecaApp bibliotecaApp = new BibliotecaApp();
         System.out.println(bibliotecaApp.getWelcomeMessage());
-        System.out.println(bibliotecaApp.listBooksNames(bibliotecaApp.getBooks()));
+        System.out.println(bibliotecaApp.listAllBooks(bibliotecaApp.getBooks()));
 
     }
 
