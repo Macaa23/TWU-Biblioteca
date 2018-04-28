@@ -62,4 +62,13 @@ public class BibliotecaAppTest {
 
         assertEquals(availableBooks.get(1).getName(), bibliotecaApp.findBookByName("The Magicians").getName());
     }
+
+    @Test
+    public void whenListAllBooksIsCalled_shouldReturnADetailedListOfAllBooks(){
+
+        when(bibliotecaAppDao.getBooks()).thenReturn(availableBooks);
+        assertEquals("Dracula     Bram Stoker     1897\n" +
+                "The Magicians     Lev Grossman     2009\n" +
+                "La Casa de los Espiritus     Isabel Allende     1982\n", bibliotecaApp.listAllBooks());
+    }
 }

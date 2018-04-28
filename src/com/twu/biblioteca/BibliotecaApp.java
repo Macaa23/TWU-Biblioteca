@@ -21,4 +21,16 @@ public class BibliotecaApp {
     public Book findBookByName(String bookName) {
         return bibliotecaAppDao.findBookByName(bookName);
     }
+
+    public String listAllBooks() {
+        String bookList = "";
+        Book tempBook;
+        LinkedList<Book> allBooks;
+        allBooks = bibliotecaAppDao.getBooks();
+        for (int i = 0; i < allBooks.size(); i++){
+            tempBook = allBooks.get(i);
+            bookList+= tempBook.getName() + "     " + tempBook.getAuthor()+ "     " + tempBook.getYear() + "\n";
+        }
+        return bookList;
+    }
 }
