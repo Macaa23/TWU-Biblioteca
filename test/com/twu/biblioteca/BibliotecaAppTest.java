@@ -69,7 +69,7 @@ public class BibliotecaAppTest {
         when(bibliotecaAppDao.getBooks()).thenReturn(availableBooks);
         assertEquals("Dracula     Bram Stoker     1897\n" +
                 "The Magicians     Lev Grossman     2009\n" +
-                "La Casa de los Espiritus     Isabel Allende     1982\n", bibliotecaApp.listAllBooks());
+                "La Casa de los Espiritus     Isabel Allende     1982\n", bibliotecaApp.listAllBooks(bibliotecaApp.getBooks()));
     }
 
     @Test
@@ -78,6 +78,6 @@ public class BibliotecaAppTest {
         when(bibliotecaAppDao.getBooks()).thenReturn(availableBooks);
         assertEquals("Dracula\n" +
                 "The Magicians\n" +
-                "La Casa de los Espiritus\n", bibliotecaApp.listBooksNames());
+                "La Casa de los Espiritus\n", bibliotecaApp.listBooksNames(bibliotecaApp.getBooks()));
     }
 }

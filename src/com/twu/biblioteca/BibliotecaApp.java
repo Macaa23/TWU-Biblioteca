@@ -10,6 +10,8 @@ public class BibliotecaApp {
 
         BibliotecaApp bibliotecaApp = new BibliotecaApp();
         System.out.println(bibliotecaApp.getWelcomeMessage());
+        System.out.println(bibliotecaApp.listBooksNames(bibliotecaApp.getBooks()));
+
     }
 
     public String getWelcomeMessage() {
@@ -17,7 +19,12 @@ public class BibliotecaApp {
     }
 
     public LinkedList<Book> getBooks() {
-        return bibliotecaAppDao.getBooks();
+        LinkedList<Book> availableBooks = new LinkedList<Book>();
+        availableBooks.add(new Book("Dracula", "Bram Stoker", 1897));
+        availableBooks.add(new Book("The Magicians", "Lev Grossman", 2009));
+        availableBooks.add(new Book("La Casa de los Espiritus", "Isabel Allende", 1982));
+        //return bibliotecaAppDao.getBooks();
+        return availableBooks;
     }
 
     public Book findBookByName(String bookName) {
