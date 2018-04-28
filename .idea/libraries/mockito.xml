@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="mockito">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../mockito-generator/lib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../mockito-generator/lib" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/../mockito-generator/lib" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../mockito-generator/lib" recursive="false" type="SOURCES" />
+  </library>
+</component>

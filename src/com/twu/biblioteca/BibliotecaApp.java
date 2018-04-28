@@ -4,6 +4,8 @@ import java.util.LinkedList;
 
 public class BibliotecaApp {
 
+    private BibliotecaAppDao bibliotecaAppDao;
+
     public static void main(String[] args) {
         System.out.println("Hello, world!");
     }
@@ -13,10 +15,10 @@ public class BibliotecaApp {
     }
 
     public LinkedList<Book> getBooks() {
-        LinkedList<Book> availableBooks = new LinkedList<Book>();
-        availableBooks.add(new Book());
-        availableBooks.add(new Book());
-        availableBooks.add(new Book());
-        return availableBooks;
+        return bibliotecaAppDao.getBooks();
+    }
+
+    public Book findBookByName(String bookName) {
+        return bibliotecaAppDao.findBookByName(bookName);
     }
 }
