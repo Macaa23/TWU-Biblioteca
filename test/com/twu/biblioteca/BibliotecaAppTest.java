@@ -36,7 +36,7 @@ public class BibliotecaAppTest {
     @Test
     public void whenGetWelcomeMessageIsCalled_shouldReturnAWelcomeMessageForTheUser(){
         BibliotecaApp userInterface = new BibliotecaApp();
-        assertEquals("Welcome to the Bangalore Public Library System", userInterface.getWelcomeMessage());
+        assertEquals("Welcome to the Bangalore Public Library System\n\n", userInterface.getWelcomeMessage());
     }
 
     @Test

@@ -7,11 +7,13 @@ public class BibliotecaApp {
     private BibliotecaAppDao bibliotecaAppDao;
 
     public static void main(String[] args) {
-        System.out.println("Hello, world!");
+
+        BibliotecaApp bibliotecaApp = new BibliotecaApp();
+        System.out.println(bibliotecaApp.getWelcomeMessage());
     }
 
     public String getWelcomeMessage() {
-        return "Welcome to the Bangalore Public Library System";
+        return "Welcome to the Bangalore Public Library System\n\n";
     }
 
     public LinkedList<Book> getBooks() {
