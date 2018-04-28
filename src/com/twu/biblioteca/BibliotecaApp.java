@@ -24,11 +24,9 @@ public class BibliotecaApp {
         return bibliotecaAppDao.findBookByName(bookName);
     }
 
-    public String listAllBooks() {
+    public String listAllBooks(LinkedList<Book> allBooks) {
         String bookList = "";
         Book tempBook;
-        LinkedList<Book> allBooks;
-        allBooks = bibliotecaAppDao.getBooks();
         for (int i = 0; i < allBooks.size(); i++){
             tempBook = allBooks.get(i);
             bookList+= tempBook.getName() + "     " + tempBook.getAuthor()+ "     " + tempBook.getYear() + "\n";
@@ -36,11 +34,9 @@ public class BibliotecaApp {
         return bookList;
     }
 
-    public String listBooksNames() {
+    public String listBooksNames(LinkedList<Book> allBooks) {
         String bookList = "";
         Book tempBook;
-        LinkedList<Book> allBooks;
-        allBooks = bibliotecaAppDao.getBooks();
         for (int i = 0; i < allBooks.size(); i++){
             tempBook = allBooks.get(i);
             bookList+= tempBook.getName()+"\n";
