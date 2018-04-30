@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Scanner;
+import java.util.zip.ZipFile;
 
 public class BibliotecaApp {
 
@@ -101,5 +102,9 @@ public class BibliotecaApp {
             return false;
         }
         return true;
+    }
+
+    public LinkedList<Book> executeMenuOption(int option) {
+        return this.getBooks();
     }
 }

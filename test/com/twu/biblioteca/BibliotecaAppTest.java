@@ -134,4 +134,10 @@ public class BibliotecaAppTest {
         bibliotecaApp.isMenuOptionValid(-3);
         assertEquals("Select a valid option!\n", wrongInput.toString());
     }
+
+    @Test
+    public void whenExecuteMenuOptionIsCalledByOne_shouldReturnAListWithThreeBooks(){
+        when(bibliotecaAppDao.getBooks()).thenReturn(availableBooks);
+        assertTrue(bibliotecaApp.executeMenuOption(1).size() == 3);
+    }
 }

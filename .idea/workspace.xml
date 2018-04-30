@@ -15,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BibliotecaApp.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BibliotecaApp.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="475">
-              <caret line="96" column="9" lean-forward="true" selection-start-line="96" selection-start-column="9" selection-end-line="96" selection-end-column="9" />
+              <caret line="107" column="20" selection-start-line="107" selection-start-column="20" selection-end-line="107" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#654#655#0" expanded="true" />
@@ -27,16 +27,18 @@
                 <element signature="e#1208#1209#0" expanded="true" />
                 <element signature="e#1272#1273#0" expanded="true" />
                 <element signature="e#1818#1826#0" expanded="true" />
+                <element signature="e#3439#3440#0" expanded="true" />
+                <element signature="e#3465#3466#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BibliotecaAppTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BibliotecaAppTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaAppTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="122" column="32" lean-forward="true" selection-start-line="122" selection-start-column="32" selection-end-line="122" selection-end-column="32" />
+            <state relative-caret-position="460">
+              <caret line="138" column="61" selection-start-line="138" selection-start-column="16" selection-end-line="138" selection-end-column="82" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#527#533#0" expanded="true" />
@@ -168,7 +170,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.BibliotecaApp">
+  <component name="RunManager" selected="JUnit.BibliotecaAppTest">
     <configuration name="BibliotecaApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.BibliotecaApp" />
       <module name="biblioteca" />
@@ -183,7 +185,7 @@
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
-    <configuration name="BibliotecaAppTest.whenIsMenuOptionValidCalledByALetter_shouldPrintErrorMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BibliotecaAppTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="biblioteca" />
       <extension name="coverage">
         <pattern>
@@ -195,7 +197,30 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
       <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.BibliotecaAppTest" />
-      <option name="METHOD_NAME" value="whenIsMenuOptionValidCalledByALetter_shouldPrintErrorMessage" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="BibliotecaAppTest.whenExecuteMenuOptionIsCalledByOne_shouldReturnAListWithThreeBooks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="biblioteca" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.twu.biblioteca.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
+      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.BibliotecaAppTest" />
+      <option name="METHOD_NAME" value="whenExecuteMenuOptionIsCalledByOne_shouldReturnAListWithThreeBooks" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -219,29 +244,6 @@
       <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
       <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.BibliotecaAppTest" />
       <option name="METHOD_NAME" value="whenIsMenuOptionValidCalledByAnInvalidNumber_shouldPrintErrorMessage" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="BibliotecaAppTest.whenReadMenuOptionIsCalledAndUserInputIsALetter_shouldPrintErrorMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="biblioteca" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.twu.biblioteca.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
-      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.BibliotecaAppTest" />
-      <option name="METHOD_NAME" value="whenReadMenuOptionIsCalledAndUserInputIsALetter_shouldPrintErrorMessage" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -314,19 +316,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="JUnit.BibliotecaAppTest.whenReadMenuOptionIsCalledAndUserInputIsALetter_shouldPrintErrorMessage" />
       <item itemvalue="JUnit.BibliotecaAppTest.whenReadMenuOptionIsCalledAndUserInputIsOne_shouldReturnNumberOne" />
       <item itemvalue="JUnit.BibliotecaAppTest.whenIsMenuOptionValidCalledByAnInvalidNumber_shouldPrintErrorMessage" />
-      <item itemvalue="JUnit.BibliotecaAppTest.whenIsMenuOptionValidCalledByALetter_shouldPrintErrorMessage" />
       <item itemvalue="Application.BibliotecaApp" />
+      <item itemvalue="JUnit.BibliotecaAppTest.whenExecuteMenuOptionIsCalledByOne_shouldReturnAListWithThreeBooks" />
+      <item itemvalue="JUnit.BibliotecaAppTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BibliotecaAppTest" />
+        <item itemvalue="JUnit.BibliotecaAppTest.whenExecuteMenuOptionIsCalledByOne_shouldReturnAListWithThreeBooks" />
         <item itemvalue="Application.BibliotecaApp" />
         <item itemvalue="JUnit.BibliotecaAppTest.whenReadMenuOptionIsCalledAndUserInputIsOne_shouldReturnNumberOne" />
         <item itemvalue="JUnit.BibliotecaAppTest.whenIsMenuOptionValidCalledByAnInvalidNumber_shouldPrintErrorMessage" />
-        <item itemvalue="JUnit.BibliotecaAppTest.whenIsMenuOptionValidCalledByALetter_shouldPrintErrorMessage" />
-        <item itemvalue="JUnit.BibliotecaAppTest.whenReadMenuOptionIsCalledAndUserInputIsALetter_shouldPrintErrorMessage" />
       </list>
     </recent_temporary>
   </component>
@@ -344,18 +346,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="BibliotecaAppTest_whenReadMenuOptionIsCalledAndUserInputIsALetter_shouldPrintErrorMessage - 2018.04.30 at 16h 52m 45s.xml">
-      <configuration name="BibliotecaAppTest.whenReadMenuOptionIsCalledAndUserInputIsALetter_shouldPrintErrorMessage" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BibliotecaAppTest_whenReadMenuOptionIsCalledAndUserInputIsALetter_shouldPrintErrorMessage - 2018.04.30 at 16h 53m 12s.xml">
-      <configuration name="BibliotecaAppTest.whenReadMenuOptionIsCalledAndUserInputIsALetter_shouldPrintErrorMessage" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BibliotecaAppTest_whenReadMenuOptionIsCalledAndUserInputIsALetter_shouldPrintErrorMessage - 2018.04.30 at 16h 53m 40s.xml">
-      <configuration name="BibliotecaAppTest.whenReadMenuOptionIsCalledAndUserInputIsALetter_shouldPrintErrorMessage" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BibliotecaAppTest_whenReadMenuOptionIsCalledAndUserInputIsALetter_shouldPrintErrorMessage - 2018.04.30 at 16h 54m 14s.xml">
-      <configuration name="BibliotecaAppTest.whenReadMenuOptionIsCalledAndUserInputIsALetter_shouldPrintErrorMessage" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="BibliotecaAppTest_whenReadMenuOptionIsCalledAndUserInputIsALetter_shouldPrintErrorMessage - 2018.04.30 at 16h 55m 06s.xml">
       <configuration name="BibliotecaAppTest.whenReadMenuOptionIsCalledAndUserInputIsALetter_shouldPrintErrorMessage" configurationId="JUnit" />
     </history-entry>
@@ -374,6 +364,18 @@
     <history-entry file="BibliotecaAppTest_whenIsMenuOptionValidCalledByALetter_shouldPrintErrorMessage - 2018.04.30 at 17h 20m 12s.xml">
       <configuration name="BibliotecaAppTest.whenIsMenuOptionValidCalledByALetter_shouldPrintErrorMessage" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="BibliotecaAppTest_whenIsMenuOptionValidCalledByALetter_shouldPrintErrorMessage - 2018.04.30 at 17h 26m 08s.xml">
+      <configuration name="BibliotecaAppTest.whenIsMenuOptionValidCalledByALetter_shouldPrintErrorMessage" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BibliotecaAppTest_whenIsMenuOptionValidCalledByAnInvalidNumber_shouldPrintErrorMessage - 2018.04.30 at 17h 26m 14s.xml">
+      <configuration name="BibliotecaAppTest.whenIsMenuOptionValidCalledByAnInvalidNumber_shouldPrintErrorMessage" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BibliotecaAppTest_whenReadMenuOptionIsCalledAndUserInputIsOne_shouldReturnNumberOne - 2018.04.30 at 17h 26m 20s.xml">
+      <configuration name="BibliotecaAppTest.whenReadMenuOptionIsCalledAndUserInputIsOne_shouldReturnNumberOne" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BibliotecaAppTest_whenReadMenuOptionIsCalledAndUserInputIsOne_shouldReturnNumberOne - 2018.04.30 at 17h 26m 57s.xml">
+      <configuration name="BibliotecaAppTest.whenReadMenuOptionIsCalledAndUserInputIsOne_shouldReturnNumberOne" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="55" y="22" width="1625" height="1028" extended-state="0" />
@@ -387,9 +389,9 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34586465" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.34586465" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.29108486" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.29108486" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16677195" />
@@ -452,6 +454,8 @@
             <element signature="e#1208#1209#0" expanded="true" />
             <element signature="e#1272#1273#0" expanded="true" />
             <element signature="e#1818#1826#0" expanded="true" />
+            <element signature="e#3439#3440#0" expanded="true" />
+            <element signature="e#3465#3466#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -641,6 +645,8 @@
             <element signature="e#1208#1209#0" expanded="true" />
             <element signature="e#1272#1273#0" expanded="true" />
             <element signature="e#1818#1826#0" expanded="true" />
+            <element signature="e#3439#3440#0" expanded="true" />
+            <element signature="e#3465#3466#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -686,23 +692,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaAppTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="122" column="32" lean-forward="true" selection-start-line="122" selection-start-column="32" selection-end-line="122" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#527#533#0" expanded="true" />
-            <element signature="e#1363#1364#0" expanded="true" />
-            <element signature="e#1404#1405#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
-          <caret line="96" column="9" lean-forward="true" selection-start-line="96" selection-start-column="9" selection-end-line="96" selection-end-column="9" />
+          <caret line="107" column="20" selection-start-line="107" selection-start-column="20" selection-end-line="107" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#654#655#0" expanded="true" />
@@ -710,6 +703,21 @@
             <element signature="e#1208#1209#0" expanded="true" />
             <element signature="e#1272#1273#0" expanded="true" />
             <element signature="e#1818#1826#0" expanded="true" />
+            <element signature="e#3439#3440#0" expanded="true" />
+            <element signature="e#3465#3466#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaAppTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="138" column="61" selection-start-line="138" selection-start-column="16" selection-end-line="138" selection-end-column="82" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#527#533#0" expanded="true" />
+            <element signature="e#1363#1364#0" expanded="true" />
+            <element signature="e#1404#1405#0" expanded="true" />
           </folding>
         </state>
       </provider>

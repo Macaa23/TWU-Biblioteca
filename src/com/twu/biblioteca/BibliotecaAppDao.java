@@ -7,4 +7,5 @@ public interface BibliotecaAppDao {
     public LinkedList<Book> getBooks();
 
     public Book findBookByName(String bookName);
+
 }
