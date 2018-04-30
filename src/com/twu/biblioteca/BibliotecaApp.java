@@ -1,6 +1,9 @@
 package com.twu.biblioteca;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Scanner;
 
 public class BibliotecaApp {
 
@@ -10,8 +13,7 @@ public class BibliotecaApp {
 
         BibliotecaApp bibliotecaApp = new BibliotecaApp();
         System.out.println(bibliotecaApp.getWelcomeMessage());
-        System.out.println(bibliotecaApp.getMenu());
-        //System.out.println(bibliotecaApp.listAllBooks(bibliotecaApp.getBooks()));
+        System.out.println(bibliotecaApp.printMenu());
 
     }
 
@@ -52,7 +54,34 @@ public class BibliotecaApp {
         return bookList;
     }
 
-    public String getMenu() {
-        return "        Menu\n\n1. List Books";
+    public ArrayList<String> getMenu() {
+        ArrayList<String> menuOptions = new ArrayList<String>();
+        menuOptions.add("List Books");
+        return menuOptions;
+    }
+
+    public String printMenu() {
+        String menu = "        Menu\n\n";
+        ArrayList<String> menuOptions;
+        menuOptions = this.getMenu();
+        for(int i = 0; i < menuOptions.size(); i ++){
+            menu += i+1 + ". " +menuOptions.get(i)+"\n";
+        }
+        return menu;
+    }
+
+
+    public int readMenuOption(){
+        Scanner scan = new Scanner(System.in);
+        int option = 0;
+        try {
+            option = Integer.parseInt(scan.next());
+            if(option < 1 || option > getMenu().size()) throw new NumberFormatException("Select a valid option!");
+            scan.close();
+        }catch (Exception e){
+           throw new NumberFormatException("Select a valid option!");
+        }
+        return option;
+
     }
 }

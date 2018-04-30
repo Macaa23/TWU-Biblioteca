@@ -2,16 +2,24 @@ package com.twu.biblioteca;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.util.InputMismatchException;
 import java.util.LinkedList;
+import java.util.Scanner;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -32,6 +40,9 @@ public class BibliotecaAppTest {
 
     @InjectMocks
     private BibliotecaApp bibliotecaApp;
+
+    @Rule
+    public ExpectedException expectedEx = ExpectedException.none();
 
     @Test
     public void whenGetWelcomeMessageIsCalled_shouldReturnAWelcomeMessageForTheUser(){
@@ -82,8 +93,45 @@ public class BibliotecaAppTest {
     }
 
     @Test
-    public void whenGetMenuIsCalled_shouldReturnAStringContainingListBooksOption(){
-
-        assertTrue(bibliotecaApp.getMenu().contains("List Books"));
+    public void whenGetMenuIsCalled_shouldReturnAListWithAtLeastOneElement(){
+        assertFalse(bibliotecaApp.getMenu().isEmpty());
     }
+
+    @Test
+    public void whenPrintMenuIsCalled_shouldReturnAStringContainingListBooksOption(){
+
+        assertTrue(bibliotecaApp.printMenu().contains("List Books"));
+    }
+
+
+    @Test
+    public void whenReadMenuOptionIsCalledAndUserInputIsOne_shouldReturnNumberOne(){
+        int option;
+        String input = "1";
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
+        option = bibliotecaApp.readMenuOption();
+        assertTrue(option == 1);
+    }
+
+    @Test
+    public void whenReadMenuOptionIsCalledAndUserInputIsALetter_shouldThrowException() throws Exception{
+        String input = "x";
+        expectedEx.expect(NumberFormatException.class);
+        expectedEx.expectMessage("Select a valid option!");
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
+        bibliotecaApp.readMenuOption();
+    }
+
+    @Test
+    public void whenReadMenuOptionIsCalledAndUserInputIsAnInvalidNumber_shouldThrowException() throws Exception{
+        String input = "-1";
+        expectedEx.expect(NumberFormatException.class);
+        expectedEx.expectMessage("Select a valid option!");
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
+        bibliotecaApp.readMenuOption();
+    }
+
 }
