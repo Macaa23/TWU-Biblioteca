@@ -14,6 +14,7 @@ public class BibliotecaApp {
         BibliotecaApp bibliotecaApp = new BibliotecaApp();
         System.out.println(bibliotecaApp.getWelcomeMessage());
         System.out.println(bibliotecaApp.printMenu());
+        System.out.println(bibliotecaApp.readMenuOption());
 
     }
 
@@ -37,9 +38,9 @@ public class BibliotecaApp {
     public String listAllBooks(LinkedList<Book> allBooks) {
         String bookList = "";
         Book tempBook;
-        for (int i = 0; i < allBooks.size(); i++){
+        for (int i = 0; i < allBooks.size(); i++) {
             tempBook = allBooks.get(i);
-            bookList+= tempBook.getName() + "     " + tempBook.getAuthor()+ "     " + tempBook.getYear() + "\n";
+            bookList += tempBook.getName() + "     " + tempBook.getAuthor() + "     " + tempBook.getYear() + "\n";
         }
         return bookList;
     }
@@ -47,9 +48,9 @@ public class BibliotecaApp {
     public String listBooksNames(LinkedList<Book> allBooks) {
         String bookList = "";
         Book tempBook;
-        for (int i = 0; i < allBooks.size(); i++){
+        for (int i = 0; i < allBooks.size(); i++) {
             tempBook = allBooks.get(i);
-            bookList+= tempBook.getName()+"\n";
+            bookList += tempBook.getName() + "\n";
         }
         return bookList;
     }
@@ -64,24 +65,41 @@ public class BibliotecaApp {
         String menu = "        Menu\n\n";
         ArrayList<String> menuOptions;
         menuOptions = this.getMenu();
-        for(int i = 0; i < menuOptions.size(); i ++){
-            menu += i+1 + ". " +menuOptions.get(i)+"\n";
+        for (int i = 0; i < menuOptions.size(); i++) {
+            menu += i + 1 + ". " + menuOptions.get(i) + "\n";
         }
         return menu;
     }
 
 
-    public int readMenuOption(){
-        Scanner scan = new Scanner(System.in);
+    public int readMenuOption() {
+        Scanner input = new Scanner(System.in);
         int option = 0;
-        try {
-            option = Integer.parseInt(scan.next());
-            if(option < 1 || option > getMenu().size()) throw new NumberFormatException("Select a valid option!");
-            scan.close();
-        }catch (Exception e){
-           throw new NumberFormatException("Select a valid option!");
-        }
-        return option;
+        System.out.println("Select an option number\n");
+        do {
+            try {
+                option = Integer.parseInt(input.next());
+                if(isMenuOptionValid(option)) break;
+            } catch (Exception e) {
+                System.err.println("Select a valid option!");
+            }
+        } while (option < 1 || option > getMenu().size());
+        input.close();
+        return option ;
+    }
 
+    public boolean isMenuOptionValid(Object option){
+        int numericOption = 0;
+        if(option instanceof Integer) {
+            numericOption = (Integer) option;
+            if (numericOption < 1 || numericOption > getMenu().size()) {
+                System.err.println("Select a valid option!");
+                return false;
+            }
+        }else if(option instanceof String) {
+            System.err.println("Select a valid option!");
+            return false;
+        }
+        return true;
     }
 }

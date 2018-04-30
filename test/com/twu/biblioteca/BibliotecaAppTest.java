@@ -11,7 +11,9 @@ import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
+import java.io.PrintStream;
 import java.util.InputMismatchException;
 import java.util.LinkedList;
 import java.util.Scanner;
@@ -26,13 +28,20 @@ import static org.mockito.Mockito.when;
 public class BibliotecaAppTest {
 
     private LinkedList<Book> availableBooks = new LinkedList<Book>();
-
+    private final ByteArrayOutputStream wrongInput = new ByteArrayOutputStream();
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
 
         availableBooks.add(new Book("Dracula", "Bram Stoker", 1897));
         availableBooks.add(new Book("The Magicians", "Lev Grossman", 2009));
         availableBooks.add(new Book("La Casa de los Espiritus", "Isabel Allende", 1982));
+
+        System.setErr(new PrintStream(wrongInput));
+    }
+
+    @After
+    public void restoreStreams() {
+        System.setErr(System.err);
     }
 
     @Mock
@@ -115,23 +124,14 @@ public class BibliotecaAppTest {
     }
 
     @Test
-    public void whenReadMenuOptionIsCalledAndUserInputIsALetter_shouldThrowException() throws Exception{
-        String input = "x";
-        expectedEx.expect(NumberFormatException.class);
-        expectedEx.expectMessage("Select a valid option!");
-        InputStream in = new ByteArrayInputStream(input.getBytes());
-        System.setIn(in);
-        bibliotecaApp.readMenuOption();
+    public void whenIsMenuOptionValidCalledByALetter_shouldPrintErrorMessage(){
+        bibliotecaApp.isMenuOptionValid("x");
+        assertEquals("Select a valid option!\n", wrongInput.toString());
     }
 
     @Test
-    public void whenReadMenuOptionIsCalledAndUserInputIsAnInvalidNumber_shouldThrowException() throws Exception{
-        String input = "-1";
-        expectedEx.expect(NumberFormatException.class);
-        expectedEx.expectMessage("Select a valid option!");
-        InputStream in = new ByteArrayInputStream(input.getBytes());
-        System.setIn(in);
-        bibliotecaApp.readMenuOption();
+    public void whenIsMenuOptionValidCalledByAnInvalidNumber_shouldPrintErrorMessage(){
+        bibliotecaApp.isMenuOptionValid(-3);
+        assertEquals("Select a valid option!\n", wrongInput.toString());
     }
-
 }
