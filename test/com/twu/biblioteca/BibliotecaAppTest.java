@@ -80,4 +80,10 @@ public class BibliotecaAppTest {
                 "The Magicians\n" +
                 "La Casa de los Espiritus\n", bibliotecaApp.listBooksNames(bibliotecaApp.getBooks()));
     }
+
+    @Test
+    public void whenGetMenuIsCalled_shouldReturnAStringContainingListBooksOption(){
+
+        assertTrue(bibliotecaApp.getMenu().contains("List Books"));
+    }
 }

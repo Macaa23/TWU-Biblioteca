@@ -10,7 +10,8 @@ public class BibliotecaApp {
 
         BibliotecaApp bibliotecaApp = new BibliotecaApp();
         System.out.println(bibliotecaApp.getWelcomeMessage());
-        System.out.println(bibliotecaApp.listAllBooks(bibliotecaApp.getBooks()));
+        System.out.println(bibliotecaApp.getMenu());
+        //System.out.println(bibliotecaApp.listAllBooks(bibliotecaApp.getBooks()));
 
     }
 
@@ -49,5 +50,9 @@ public class BibliotecaApp {
             bookList+= tempBook.getName()+"\n";
         }
         return bookList;
+    }
+
+    public String getMenu() {
+        return "        Menu\n\n1. List Books";
     }
 }
