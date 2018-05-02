@@ -1,22 +1,28 @@
 package com.twu.biblioteca;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
-import java.util.zip.ZipFile;
 
 public class BibliotecaApp {
 
     private BibliotecaAppDao bibliotecaAppDao;
+    private static int QUIT_MENU_OPTION = 2;
 
     public static void main(String[] args) {
 
         BibliotecaApp bibliotecaApp = new BibliotecaApp();
+        int option = 0;
+
         System.out.println(bibliotecaApp.getWelcomeMessage());
         System.out.println(bibliotecaApp.printMenu());
-        System.out.println(bibliotecaApp.readMenuOption());
-
+        System.out.println("Select an option number\n");
+        do {
+            option = bibliotecaApp.readMenuOption();
+            if (option == 0) continue;
+            System.out.println(bibliotecaApp.executeMenuOption(option));
+        } while (option != QUIT_MENU_OPTION);
     }
 
     public String getWelcomeMessage() {
@@ -37,7 +43,7 @@ public class BibliotecaApp {
     }
 
     public String listAllBooks(LinkedList<Book> allBooks) {
-        String bookList = "";
+        String bookList = "     List of all available books:\n\n";
         Book tempBook;
         for (int i = 0; i < allBooks.size(); i++) {
             tempBook = allBooks.get(i);
@@ -59,6 +65,7 @@ public class BibliotecaApp {
     public ArrayList<String> getMenu() {
         ArrayList<String> menuOptions = new ArrayList<String>();
         menuOptions.add("List Books");
+        menuOptions.add("Quit");
         return menuOptions;
     }
 
@@ -75,36 +82,40 @@ public class BibliotecaApp {
 
     public int readMenuOption() {
         Scanner input = new Scanner(System.in);
-        int option = 0;
-        System.out.println("Select an option number\n");
-        do {
-            try {
-                option = Integer.parseInt(input.next());
-                if(isMenuOptionValid(option)) break;
-            } catch (Exception e) {
-                System.err.println("Select a valid option!");
-            }
-        } while (option < 1 || option > getMenu().size());
-        input.close();
-        return option ;
+        String option;
+        int numericOption = 0;
+        option = input.next();
+        if (isMenuOptionValid(option)) {
+            numericOption = Integer.parseInt(option);
+            if (numericOption == QUIT_MENU_OPTION) input.close();
+            return numericOption;
+        } else {
+            return 0;
+        }
     }
 
-    public boolean isMenuOptionValid(Object option){
+    public boolean isMenuOptionValid(String option) {
         int numericOption = 0;
-        if(option instanceof Integer) {
-            numericOption = (Integer) option;
+        try {
+            numericOption = Integer.parseInt(option);
             if (numericOption < 1 || numericOption > getMenu().size()) {
                 System.err.println("Select a valid option!");
                 return false;
+            } else {
+                return true;
             }
-        }else if(option instanceof String) {
+        } catch (Exception e) {
             System.err.println("Select a valid option!");
             return false;
         }
-        return true;
     }
 
-    public LinkedList<Book> executeMenuOption(int option) {
-        return this.getBooks();
+    public String executeMenuOption(int option) {
+        String result = "";
+        if (option == 1){
+            result = this.listAllBooks(this.getBooks());
+        }
+        else if (option == QUIT_MENU_OPTION) return "Execution Finished. Have a nice day :)";
+        return result + "\nSelect an option number\n";
     }
 }

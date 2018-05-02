@@ -29,6 +29,8 @@ public class BibliotecaAppTest {
 
     private LinkedList<Book> availableBooks = new LinkedList<Book>();
     private final ByteArrayOutputStream wrongInput = new ByteArrayOutputStream();
+    private final ByteArrayOutputStream otherOptionInput = new ByteArrayOutputStream();
+
     @Before
     public void setUp() {
 
@@ -37,11 +39,13 @@ public class BibliotecaAppTest {
         availableBooks.add(new Book("La Casa de los Espiritus", "Isabel Allende", 1982));
 
         System.setErr(new PrintStream(wrongInput));
+        System.setOut(new PrintStream(otherOptionInput));
     }
 
     @After
     public void restoreStreams() {
         System.setErr(System.err);
+        System.setOut(System.out);
     }
 
     @Mock
@@ -131,13 +135,20 @@ public class BibliotecaAppTest {
 
     @Test
     public void whenIsMenuOptionValidCalledByAnInvalidNumber_shouldPrintErrorMessage(){
-        bibliotecaApp.isMenuOptionValid(-3);
+        bibliotecaApp.isMenuOptionValid("-3");
         assertEquals("Select a valid option!\n", wrongInput.toString());
     }
 
     @Test
-    public void whenExecuteMenuOptionIsCalledByOne_shouldReturnAListWithThreeBooks(){
+    public void whenExecuteMenuOptionIsCalledByOne_shouldReturnAListIncludingTheMagicians(){
         when(bibliotecaAppDao.getBooks()).thenReturn(availableBooks);
-        assertTrue(bibliotecaApp.executeMenuOption(1).size() == 3);
+        assertTrue(bibliotecaApp.executeMenuOption(1).contains("The Magicians"));
     }
+
+    @Test
+    public void whenPrintMenuIsCalled_shouldReturnAStringContainingQuitOption(){
+
+        assertTrue(bibliotecaApp.printMenu().contains("Quit"));
+    }
+
 }
