@@ -64,10 +64,11 @@ public class BookTest {
     }
 
     @Test
-    public void whenIsBookAvailableIsCalledByTheMagicians_shouldReturnFalse(){
+    public void whenIsAvailableIsCalledByTheMagicians_shouldReturnFalse(){
         Book theMagicians = new Book("The Magicians", "Lev Grossman", 2009, false);
 
         assertFalse(theMagicians.isAvailable());
     }
+
 
 }

@@ -4,8 +4,9 @@ import java.util.LinkedList;
 
 public interface BibliotecaAppDao {
 
-    public LinkedList<Book> getBooks();
+    LinkedList<Book> getBooks();
 
-    public Book findBookByName(String bookName);
+    Book findByName(String bookName);
 
+    void updateBook(Book book);
 }

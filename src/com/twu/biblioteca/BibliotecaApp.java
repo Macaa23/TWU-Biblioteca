@@ -29,16 +29,11 @@ public class BibliotecaApp {
     }
 
     public LinkedList<Book> getBooks() {
-        LinkedList<Book> availableBooks = new LinkedList<Book>();
-        availableBooks.add(new Book("Dracula", "Bram Stoker", 1897, true));
-        availableBooks.add(new Book("The Magicians", "Lev Grossman", 2009, true));
-        availableBooks.add(new Book("La Casa de los Espiritus", "Isabel Allende", 1982, true));
-        //return bibliotecaAppDao.getBooks();
-        return availableBooks;
+        return bibliotecaAppDao.getBooks();
     }
 
     public Book findBookByName(String bookName) {
-        return bibliotecaAppDao.findBookByName(bookName);
+        return bibliotecaAppDao.findByName(bookName);
     }
 
     public String listAllBooks(LinkedList<Book> allBooks) {
@@ -121,7 +116,15 @@ public class BibliotecaApp {
 
     public String checkoutBook(String bookName) {
         Book requiredBook = this.findBookByName(bookName);
-        if(requiredBook.isAvailable()) return "Thank you! Enjoy the book";
-        else return "That book is not available.";
+        if(requiredBook != null) {
+            if (requiredBook.isAvailable()){
+                requiredBook.setAvailability(false);
+                bibliotecaAppDao.updateBook(requiredBook);
+                return "Thank you! Enjoy the book";
+            }
+            else return "That book is not available.";
+        }else{
+            return "That book is not in the library registries.";
+        }
     }
 }

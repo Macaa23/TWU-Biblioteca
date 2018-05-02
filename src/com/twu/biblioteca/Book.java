@@ -63,4 +63,8 @@ public class Book {
     public boolean isAvailable() {
         return this.available;
     }
+
+    public void setAvailability(boolean availability) {
+        this.available = availability;
+    }
 }

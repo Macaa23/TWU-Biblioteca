@@ -14,9 +14,7 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
-import java.util.InputMismatchException;
 import java.util.LinkedList;
-import java.util.Scanner;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -27,16 +25,16 @@ import static org.mockito.Mockito.when;
 @RunWith(MockitoJUnitRunner.class)
 public class BibliotecaAppTest {
 
-    private LinkedList<Book> availableBooks = new LinkedList<Book>();
+    private LinkedList<Book> books = new LinkedList<Book>();
     private final ByteArrayOutputStream wrongInput = new ByteArrayOutputStream();
     private final ByteArrayOutputStream otherOptionInput = new ByteArrayOutputStream();
 
     @Before
     public void setUp() {
 
-        availableBooks.add(new Book("Dracula", "Bram Stoker", 1897, true));
-        availableBooks.add(new Book("The Magicians", "Lev Grossman", 2009, false));
-        availableBooks.add(new Book("La Casa de los Espiritus", "Isabel Allende", 1982, true));
+        books.add(new Book("Dracula", "Bram Stoker", 1897, true));
+        books.add(new Book("The Magicians", "Lev Grossman", 2009, false));
+        books.add(new Book("La Casa de los Espiritus", "Isabel Allende", 1982, true));
 
         System.setErr(new PrintStream(wrongInput));
         System.setOut(new PrintStream(otherOptionInput));
@@ -66,7 +64,7 @@ public class BibliotecaAppTest {
     @Test
     public void whenGetBooksIsCalled_shouldReturnAListOfThreeBooks(){
 
-        when(bibliotecaAppDao.getBooks()).thenReturn(availableBooks);
+        when(bibliotecaAppDao.getBooks()).thenReturn(books);
 
         assertTrue(bibliotecaApp.getBooks().size() == 3);
     }
@@ -74,23 +72,23 @@ public class BibliotecaAppTest {
     @Test
     public void whenfindBookByNameIsCalledByDracula_shouldReturnABookNamedDracula(){
 
-        when(bibliotecaAppDao.findBookByName("Dracula")).thenReturn(availableBooks.get(0));
+        when(bibliotecaAppDao.findByName("Dracula")).thenReturn(books.get(0));
 
-        assertEquals(availableBooks.get(0).getName(), bibliotecaApp.findBookByName("Dracula").getName());
+        assertEquals(books.get(0).getName(), bibliotecaApp.findBookByName("Dracula").getName());
     }
 
     @Test
     public void whenfindBookByNameIsCalledByTheMagicians_shouldReturnABookNamedTheMagicians(){
 
-        when(bibliotecaAppDao.findBookByName("The Magicians")).thenReturn(availableBooks.get(1));
+        when(bibliotecaAppDao.findByName("The Magicians")).thenReturn(books.get(1));
 
-        assertEquals(availableBooks.get(1).getName(), bibliotecaApp.findBookByName("The Magicians").getName());
+        assertEquals(books.get(1).getName(), bibliotecaApp.findBookByName("The Magicians").getName());
     }
 
     @Test
     public void whenListAllBooksIsCalled_shouldReturnADetailedListOfAllBooks(){
 
-        when(bibliotecaAppDao.getBooks()).thenReturn(availableBooks);
+        when(bibliotecaAppDao.getBooks()).thenReturn(books);
         assertEquals("     List of all available books:\n\n" + "Dracula     Bram Stoker     1897\n" +
                 "The Magicians     Lev Grossman     2009\n" +
                 "La Casa de los Espiritus     Isabel Allende     1982\n", bibliotecaApp.listAllBooks(bibliotecaApp.getBooks()));
@@ -99,7 +97,7 @@ public class BibliotecaAppTest {
     @Test
     public void whenListBooksNamesIsCalled_shouldReturnAListOfBooksByName(){
 
-        when(bibliotecaAppDao.getBooks()).thenReturn(availableBooks);
+        when(bibliotecaAppDao.getBooks()).thenReturn(books);
         assertEquals("Dracula\n" +
                 "The Magicians\n" +
                 "La Casa de los Espiritus\n", bibliotecaApp.listBooksNames(bibliotecaApp.getBooks()));
@@ -141,7 +139,7 @@ public class BibliotecaAppTest {
 
     @Test
     public void whenExecuteMenuOptionIsCalledByOne_shouldReturnAListIncludingTheMagicians(){
-        when(bibliotecaAppDao.getBooks()).thenReturn(availableBooks);
+        when(bibliotecaAppDao.getBooks()).thenReturn(books);
         assertTrue(bibliotecaApp.executeMenuOption(1).contains("The Magicians"));
     }
 
@@ -159,13 +157,20 @@ public class BibliotecaAppTest {
 
     @Test
     public void whenCheckoutBookIsCalledByAnAvailableTitleLikeDracula_shouldReturnAMessageIndicatingTheCheckoutWasSuccessful(){
-        when(bibliotecaAppDao.findBookByName("Dracula")).thenReturn(availableBooks.get(0));
+        when(bibliotecaAppDao.findByName("Dracula")).thenReturn(books.get(0));
         assertEquals("Thank you! Enjoy the book", bibliotecaApp.checkoutBook("Dracula"));
     }
 
     @Test
     public void whenCheckoutBookIsCalledByAnUnavailableTitleLikeTheMagicians_shouldReturnAMessageIndicatingTheCheckoutWasUnsuccessful(){
-        when(bibliotecaAppDao.findBookByName("The Magicians")).thenReturn(availableBooks.get(1));
+        when(bibliotecaAppDao.findByName("The Magicians")).thenReturn(books.get(1));
         assertEquals("That book is not available.", bibliotecaApp.checkoutBook("The Magicians"));
     }
+
+    @Test
+    public void whenCheckoutBookIsCalledByAnInexistantTitle_shouldReturnAMessageIndicatingTheTitleDoesNotExistsInTheLibrary(){
+        when(bibliotecaAppDao.findByName("Some Ghost Book")).thenReturn(null);
+        assertEquals("That book is not in the library registries.", bibliotecaApp.checkoutBook("Some Ghost Book"));
+    }
+
 }
