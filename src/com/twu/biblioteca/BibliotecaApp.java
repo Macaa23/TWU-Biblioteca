@@ -6,8 +6,9 @@ import java.util.Scanner;
 
 public class BibliotecaApp {
 
-    private BibliotecaAppDao bibliotecaAppDao;
-    private static int QUIT_MENU_OPTION = 2;
+    private BibliotecaAppDao bibliotecaAppDao = new BibliotecaAppDaoImpl();
+
+    private static int QUIT_MENU_OPTION = 3;
 
     public static void main(String[] args) {
 
@@ -107,23 +108,26 @@ public class BibliotecaApp {
 
     public String executeMenuOption(int option) {
         String result = "";
-        if (option == 1){
+        if (option == 1) {
             result = this.listAllBooks(this.getBooks());
-        }
-        else if (option == QUIT_MENU_OPTION) return "Execution Finished. Have a nice day :)";
+        } else if (option == 2) {
+            System.out.println("    \nEnter the book's name you want to checkout\n");
+            Scanner input = new Scanner(System.in);
+            String bookName = input.nextLine();
+            result = checkoutBook(bookName);
+        } else if (option == QUIT_MENU_OPTION) return "Execution Finished. Have a nice day :)";
         return result + "\nSelect an option number\n";
     }
 
     public String checkoutBook(String bookName) {
         Book requiredBook = this.findBookByName(bookName);
-        if(requiredBook != null) {
-            if (requiredBook.isAvailable()){
+        if (requiredBook != null) {
+            if (requiredBook.isAvailable()) {
                 requiredBook.setAvailability(false);
                 bibliotecaAppDao.updateBook(requiredBook);
                 return "Thank you! Enjoy the book";
-            }
-            else return "That book is not available.";
-        }else{
+            } else return "That book is not available.";
+        } else {
             return "That book is not in the library registries.";
         }
     }

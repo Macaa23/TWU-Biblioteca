@@ -173,4 +173,10 @@ public class BibliotecaAppTest {
         assertEquals("That book is not in the library registries.", bibliotecaApp.checkoutBook("Some Ghost Book"));
     }
 
+    @Test
+    public void whenABookLikeDraculaIsCheckedout_itShouldNoLongerBeAvailable(){
+        when(bibliotecaAppDao.findByName("Dracula")).thenReturn(books.get(0));
+        bibliotecaApp.checkoutBook("Dracula");
+        assertFalse(books.get(0).isAvailable());
+    }
 }
