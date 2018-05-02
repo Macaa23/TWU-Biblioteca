@@ -9,11 +9,13 @@ public class Book {
     private String ISBN;
     private String language;
     private String publishingHouse;
+    private boolean available;
 
-    public Book(String name, String author, int year) {
+    public Book(String name, String author, int year, boolean available) {
         this.name = name;
         this.author = author;
         this.year = year;
+        this.available = available;
     }
 
     public Book(int id, String name, String author, int year, String ISBN, String language, String publishingHouse) {
@@ -56,5 +58,9 @@ public class Book {
 
     public String toString() {
         return this.name + "   |   " + this.author + "   |   " + this.year + "   |   " ;
+    }
+
+    public boolean isAvailable() {
+        return this.available;
     }
 }

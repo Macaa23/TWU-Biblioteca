@@ -2,7 +2,6 @@ package com.twu.biblioteca;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Scanner;
 
 public class BibliotecaApp {
@@ -31,9 +30,9 @@ public class BibliotecaApp {
 
     public LinkedList<Book> getBooks() {
         LinkedList<Book> availableBooks = new LinkedList<Book>();
-        availableBooks.add(new Book("Dracula", "Bram Stoker", 1897));
-        availableBooks.add(new Book("The Magicians", "Lev Grossman", 2009));
-        availableBooks.add(new Book("La Casa de los Espiritus", "Isabel Allende", 1982));
+        availableBooks.add(new Book("Dracula", "Bram Stoker", 1897, true));
+        availableBooks.add(new Book("The Magicians", "Lev Grossman", 2009, true));
+        availableBooks.add(new Book("La Casa de los Espiritus", "Isabel Allende", 1982, true));
         //return bibliotecaAppDao.getBooks();
         return availableBooks;
     }
@@ -65,6 +64,7 @@ public class BibliotecaApp {
     public ArrayList<String> getMenu() {
         ArrayList<String> menuOptions = new ArrayList<String>();
         menuOptions.add("List Books");
+        menuOptions.add("Checkout Book");
         menuOptions.add("Quit");
         return menuOptions;
     }
@@ -117,5 +117,11 @@ public class BibliotecaApp {
         }
         else if (option == QUIT_MENU_OPTION) return "Execution Finished. Have a nice day :)";
         return result + "\nSelect an option number\n";
+    }
+
+    public String checkoutBook(String bookName) {
+        Book requiredBook = this.findBookByName(bookName);
+        if(requiredBook.isAvailable()) return "Thank you! Enjoy the book";
+        else return "That book is not available.";
     }
 }
