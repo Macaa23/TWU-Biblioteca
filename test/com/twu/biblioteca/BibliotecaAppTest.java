@@ -32,7 +32,7 @@ public class BibliotecaAppTest {
     public void setUp() {
 
         books.add(new Book("Dracula", "Bram Stoker", 1897, true));
-        books.add(new Book("The Magicians", "Lev Grossman", 2009, false));
+        books.add(new Book("The Magicians", "Lev Grossman", 2009, true));
         books.add(new Book("La Casa de los Espiritus", "Isabel Allende", 1982, true));
 
         System.setErr(new PrintStream(wrongInput));
@@ -88,7 +88,7 @@ public class BibliotecaAppTest {
     public void whenListAllBooksIsCalled_shouldReturnADetailedListOfAllBooks(){
 
         when(bibliotecaAppDao.getBooks()).thenReturn(books);
-        assertEquals("     List of all available books:\n\n" + "Dracula     Bram Stoker     1897\n" +
+        assertEquals("     List of all books:\n\n" + "Dracula     Bram Stoker     1897\n" +
                 "The Magicians     Lev Grossman     2009\n" +
                 "La Casa de los Espiritus     Isabel Allende     1982\n", bibliotecaApp.listAllBooks());
     }
@@ -97,7 +97,7 @@ public class BibliotecaAppTest {
     public void whenListBooksNamesIsCalled_shouldReturnAListOfBooksByName(){
 
         when(bibliotecaAppDao.getBooks()).thenReturn(books);
-        assertEquals("Dracula\n" +
+        assertEquals("     List of all books by name:\n\n" + "Dracula\n" +
                 "The Magicians\n" +
                 "La Casa de los Espiritus\n", bibliotecaApp.listBooksNames());
     }
@@ -162,6 +162,7 @@ public class BibliotecaAppTest {
 
     @Test
     public void whenCheckoutBookIsCalledByAnUnavailableTitleLikeTheMagicians_shouldReturnAMessageIndicatingTheCheckoutWasUnsuccessful(){
+        books.get(1).setAvailability(false);
         when(bibliotecaAppDao.findByName("The Magicians")).thenReturn(books.get(1));
         assertEquals("That book is not available.", bibliotecaApp.checkoutBook("The Magicians"));
     }
@@ -185,5 +186,24 @@ public class BibliotecaAppTest {
         when(bibliotecaAppDao.getBooks()).thenReturn(books);
         bibliotecaApp.checkoutBook("Dracula");
         assertFalse(bibliotecaApp.listAvailableBooks().contains("Dracula"));
+    }
+
+    @Test
+    public void whenPrintMenuIsCalled_shouldReturnAStringContainingReturnBookOption(){
+
+        assertTrue(bibliotecaApp.printMenu().contains("Return Book"));
+    }
+
+    @Test
+    public void whenReturnBookIsCalledByAnUnavailableBookNameLikeDracula_shouldReturnAMessageIndicatingTheReturnWasSuccessful(){
+        books.get(0).setAvailability(false);
+        when(bibliotecaAppDao.findByName("Dracula")).thenReturn(books.get(0));
+        assertEquals("Thank you for returning the book.", bibliotecaApp.returnBook("Dracula"));
+    }
+
+    @Test
+    public void whenReturnBookIsCalledByAnAvailableBookNameLikeTheMagicians_shouldReturnAMessageIndicatingTheReturnWasUnsuccessful(){
+        when(bibliotecaAppDao.findByName("The Magicians")).thenReturn(books.get(1));
+        assertEquals("That is not a valid book to return.", bibliotecaApp.returnBook("The Magicians"));
     }
 }

@@ -8,7 +8,7 @@ public class BibliotecaApp {
 
     private BibliotecaAppDao bibliotecaAppDao = new BibliotecaAppDaoImpl();
 
-    private static int QUIT_MENU_OPTION = 3;
+    private static int QUIT_MENU_OPTION = 4;
 
     public static void main(String[] args) {
 
@@ -76,6 +76,7 @@ public class BibliotecaApp {
         ArrayList<String> menuOptions = new ArrayList<String>();
         menuOptions.add("List Books");
         menuOptions.add("Checkout Book");
+        menuOptions.add("Return Book");
         menuOptions.add("Quit");
         return menuOptions;
     }
@@ -121,19 +122,6 @@ public class BibliotecaApp {
         }
     }
 
-    public String executeMenuOption(int option) {
-        String result = "";
-        if (option == 1) {
-            result = this.listAvailableBooks();
-        } else if (option == 2) {
-            System.out.println("    \nEnter the book's name you want to checkout\n");
-            Scanner input = new Scanner(System.in);
-            String bookName = input.nextLine();
-            result = checkoutBook(bookName);
-        } else if (option == QUIT_MENU_OPTION) return "Execution Finished. Have a nice day :)";
-        return result + "\nSelect an option number\n";
-    }
-
     public String checkoutBook(String bookName) {
         Book requiredBook = this.findBookByName(bookName);
         if (requiredBook != null) {
@@ -145,5 +133,36 @@ public class BibliotecaApp {
         } else {
             return "That book is not in the library registries.";
         }
+    }
+
+    public String returnBook(String bookName) {
+        Book requiredBook = this.findBookByName(bookName);
+        if (requiredBook != null) {
+            if (!requiredBook.isAvailable()) {
+                requiredBook.setAvailability(true);
+                bibliotecaAppDao.updateBook(requiredBook);
+                return "Thank you for returning the book.";
+            } else return "That is not a valid book to return.";
+        } else {
+            return "That book is not in the library registries.";
+        }
+    }
+
+    public String executeMenuOption(int option) {
+        Scanner input = new Scanner(System.in);
+        String bookName;
+        String result = "";
+        if (option == 1) {
+            result = this.listAvailableBooks();
+        } else if (option == 2) {
+            System.out.println("    \nEnter the book's name you want to checkout\n");
+            bookName = input.nextLine();
+            result = checkoutBook(bookName);
+        } else if (option == 3){
+            System.out.println("    \nEnter the book's name you want to return\n");
+            bookName = input.nextLine();
+            result = returnBook(bookName);
+        } else if (option == QUIT_MENU_OPTION) return "Execution Finished. Have a nice day :)";
+        return result + "\nSelect an option number\n";
     }
 }
