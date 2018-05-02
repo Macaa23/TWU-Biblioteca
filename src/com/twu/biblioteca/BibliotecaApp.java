@@ -37,8 +37,9 @@ public class BibliotecaApp {
         return bibliotecaAppDao.findByName(bookName);
     }
 
-    public String listAllBooks(LinkedList<Book> allBooks) {
-        String bookList = "     List of all available books:\n\n";
+    public String listAllBooks() {
+        LinkedList<Book> allBooks = this.getBooks();
+        String bookList = "     List of all books:\n\n";
         Book tempBook;
         for (int i = 0; i < allBooks.size(); i++) {
             tempBook = allBooks.get(i);
@@ -47,8 +48,22 @@ public class BibliotecaApp {
         return bookList;
     }
 
-    public String listBooksNames(LinkedList<Book> allBooks) {
-        String bookList = "";
+    public String listAvailableBooks() {
+        LinkedList<Book> allBooks = this.getBooks();
+        String bookList = "     List of all available books:\n\n";
+        Book tempBook;
+        for (int i = 0; i < allBooks.size(); i++) {
+            tempBook = allBooks.get(i);
+            if(tempBook.isAvailable()) {
+                bookList += tempBook.getName() + "     " + tempBook.getAuthor() + "     " + tempBook.getYear() + "\n";
+            }
+        }
+        return bookList;
+    }
+
+    public String listBooksNames() {
+        LinkedList<Book> allBooks = this.getBooks();
+        String bookList = "     List of all books by name:\n\n";
         Book tempBook;
         for (int i = 0; i < allBooks.size(); i++) {
             tempBook = allBooks.get(i);
@@ -109,7 +124,7 @@ public class BibliotecaApp {
     public String executeMenuOption(int option) {
         String result = "";
         if (option == 1) {
-            result = this.listAllBooks(this.getBooks());
+            result = this.listAvailableBooks();
         } else if (option == 2) {
             System.out.println("    \nEnter the book's name you want to checkout\n");
             Scanner input = new Scanner(System.in);

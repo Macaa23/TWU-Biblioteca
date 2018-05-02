@@ -19,7 +19,6 @@ import java.util.LinkedList;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -91,7 +90,7 @@ public class BibliotecaAppTest {
         when(bibliotecaAppDao.getBooks()).thenReturn(books);
         assertEquals("     List of all available books:\n\n" + "Dracula     Bram Stoker     1897\n" +
                 "The Magicians     Lev Grossman     2009\n" +
-                "La Casa de los Espiritus     Isabel Allende     1982\n", bibliotecaApp.listAllBooks(bibliotecaApp.getBooks()));
+                "La Casa de los Espiritus     Isabel Allende     1982\n", bibliotecaApp.listAllBooks());
     }
 
     @Test
@@ -100,7 +99,7 @@ public class BibliotecaAppTest {
         when(bibliotecaAppDao.getBooks()).thenReturn(books);
         assertEquals("Dracula\n" +
                 "The Magicians\n" +
-                "La Casa de los Espiritus\n", bibliotecaApp.listBooksNames(bibliotecaApp.getBooks()));
+                "La Casa de los Espiritus\n", bibliotecaApp.listBooksNames());
     }
 
     @Test
@@ -178,5 +177,13 @@ public class BibliotecaAppTest {
         when(bibliotecaAppDao.findByName("Dracula")).thenReturn(books.get(0));
         bibliotecaApp.checkoutBook("Dracula");
         assertFalse(books.get(0).isAvailable());
+    }
+
+    @Test
+    public void whenABookLikeDraculaIsCheckedout_itShouldntAppearInTheBookLists(){
+        when(bibliotecaAppDao.findByName("Dracula")).thenReturn(books.get(0));
+        when(bibliotecaAppDao.getBooks()).thenReturn(books);
+        bibliotecaApp.checkoutBook("Dracula");
+        assertFalse(bibliotecaApp.listAvailableBooks().contains("Dracula"));
     }
 }
