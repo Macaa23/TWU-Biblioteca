@@ -20,14 +20,17 @@ public class Book {
     }
 
     public String getAuthor() {
+        if(this.name.equals("") || this.name == null || this.author.equals("")) return null;
         return this.author;
     }
 
     public String getName() {
+        if(this.name.equals("")) return null;
         return this.name;
     }
 
     public int getYear() {
+        if(this.name.equals("")) return 0;
         return this.year;
     }
 

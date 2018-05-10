@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7bb13f41-d9ae-49d4-a271-745aef076cce" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/BibliotecaApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/BibliotecaApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/Book.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/BibliotecaAppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/BibliotecaAppTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/BookTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/BookTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaAppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaAppTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/BookTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/BookTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -42,8 +34,8 @@
       <file leaf-file-name="Book.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/Book.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+            <state relative-caret-position="372">
+              <caret line="32" column="41" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -51,8 +43,8 @@
       <file leaf-file-name="BookTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BookTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="24" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="87" />
+            <state relative-caret-position="373">
+              <caret line="55" column="66" lean-forward="true" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="86" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -63,7 +55,7 @@
       <file leaf-file-name="BibliotecaAppTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaAppTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="795">
+            <state relative-caret-position="248">
               <caret line="72" selection-start-line="72" selection-end-line="72" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -112,11 +104,9 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="56" />
-    <option name="y" value="22" />
-    <option name="width" value="1624" />
-    <option name="height" value="1028" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1680" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -189,22 +179,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.BookTest.getAuthor_shouldReturnJKRowling_whenBookIsInitializedWithThatAuthorName">
-    <configuration name="BibliotecaApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.BibliotecaApp" />
-      <module name="biblioteca" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.twu.biblioteca.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
+  <component name="RunManager" selected="JUnit.BookTest">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
-    <configuration name="BibliotecaAppTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="biblioteca" />
       <extension name="coverage">
         <pattern>
@@ -215,7 +194,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
-      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.BibliotecaAppTest" />
+      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.BookTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -227,30 +206,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="BibliotecaAppTest.whenReturnBookIsCalledByAnAvailableBookNameLikeTheMagicians_shouldReturnAMessageIndicatingTheReturnWasUnsuccessful" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="biblioteca" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.twu.biblioteca.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
-      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.BibliotecaAppTest" />
-      <option name="METHOD_NAME" value="whenReturnBookIsCalledByAnAvailableBookNameLikeTheMagicians_shouldReturnAMessageIndicatingTheReturnWasUnsuccessful" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="BookTest.getAuthor_shouldReturnJKRowling_whenBookIsInitializedWithThatAuthorName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BookTest.getYear_shouldReturnNull_whenBookIsInitializedWithAnEmptyChainAsName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="biblioteca" />
       <extension name="coverage">
         <pattern>
@@ -262,7 +218,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
       <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.BookTest" />
-      <option name="METHOD_NAME" value="getAuthor_shouldReturnJKRowling_whenBookIsInitializedWithThatAuthorName" />
+      <option name="METHOD_NAME" value="getYear_shouldReturnNull_whenBookIsInitializedWithAnEmptyChainAsName" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -273,7 +229,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="BookTest.whenGetYearOfReleaseIsCalledByDracula_shouldReturn1897" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BookTest.getYear_shouldReturnZero_whenBookIsInitializedWithAnEmptyChainAsName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="biblioteca" />
       <extension name="coverage">
         <pattern>
@@ -285,7 +241,53 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
       <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.BookTest" />
-      <option name="METHOD_NAME" value="whenGetYearOfReleaseIsCalledByDracula_shouldReturn1897" />
+      <option name="METHOD_NAME" value="getYear_shouldReturnZero_whenBookIsInitializedWithAnEmptyChainAsName" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="BookTest.isAvailable_shouldReturnFalse_whenBookIsInitializedWithFalseAvailability" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="biblioteca" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.twu.biblioteca.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
+      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.BookTest" />
+      <option name="METHOD_NAME" value="isAvailable_shouldReturnFalse_whenBookIsInitializedWithFalseAvailability" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="BookTest.isAvailable_shouldReturnTrue_whenBookIsInitializedWithTrueAvailability" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="biblioteca" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.twu.biblioteca.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
+      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.BookTest" />
+      <option name="METHOD_NAME" value="isAvailable_shouldReturnTrue_whenBookIsInitializedWithTrueAvailability" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -335,19 +337,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="Application.BibliotecaApp" />
-      <item itemvalue="JUnit.BibliotecaAppTest.whenReturnBookIsCalledByAnAvailableBookNameLikeTheMagicians_shouldReturnAMessageIndicatingTheReturnWasUnsuccessful" />
-      <item itemvalue="JUnit.BibliotecaAppTest" />
-      <item itemvalue="JUnit.BookTest.whenGetYearOfReleaseIsCalledByDracula_shouldReturn1897" />
-      <item itemvalue="JUnit.BookTest.getAuthor_shouldReturnJKRowling_whenBookIsInitializedWithThatAuthorName" />
+      <item itemvalue="JUnit.BookTest.getYear_shouldReturnNull_whenBookIsInitializedWithAnEmptyChainAsName" />
+      <item itemvalue="JUnit.BookTest.getYear_shouldReturnZero_whenBookIsInitializedWithAnEmptyChainAsName" />
+      <item itemvalue="JUnit.BookTest.isAvailable_shouldReturnTrue_whenBookIsInitializedWithTrueAvailability" />
+      <item itemvalue="JUnit.BookTest.isAvailable_shouldReturnFalse_whenBookIsInitializedWithFalseAvailability" />
+      <item itemvalue="JUnit.BookTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BookTest.getAuthor_shouldReturnJKRowling_whenBookIsInitializedWithThatAuthorName" />
-        <item itemvalue="Application.BibliotecaApp" />
-        <item itemvalue="JUnit.BookTest.whenGetYearOfReleaseIsCalledByDracula_shouldReturn1897" />
-        <item itemvalue="JUnit.BibliotecaAppTest" />
-        <item itemvalue="JUnit.BibliotecaAppTest.whenReturnBookIsCalledByAnAvailableBookNameLikeTheMagicians_shouldReturnAMessageIndicatingTheReturnWasUnsuccessful" />
+        <item itemvalue="JUnit.BookTest" />
+        <item itemvalue="JUnit.BookTest.isAvailable_shouldReturnFalse_whenBookIsInitializedWithFalseAvailability" />
+        <item itemvalue="JUnit.BookTest.isAvailable_shouldReturnTrue_whenBookIsInitializedWithTrueAvailability" />
+        <item itemvalue="JUnit.BookTest.getYear_shouldReturnZero_whenBookIsInitializedWithAnEmptyChainAsName" />
+        <item itemvalue="JUnit.BookTest.getYear_shouldReturnNull_whenBookIsInitializedWithAnEmptyChainAsName" />
       </list>
     </recent_temporary>
   </component>
@@ -363,70 +365,70 @@
       <updated>1524751774225</updated>
       <workItem from="1525896170109" duration="2097000" />
       <workItem from="1525951436644" duration="395000" />
-      <workItem from="1525952757457" duration="373000" />
+      <workItem from="1525952757457" duration="1992000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="BibliotecaAppTest_whenReturnBookIsCalledByAnUnavailableBookNameLikeDracula_shouldReturnAMessageIndicatingTheReturnWasSuccessful - 2018.05.02 at 17h 29m 59s.xml">
-      <configuration name="BibliotecaAppTest.whenReturnBookIsCalledByAnUnavailableBookNameLikeDracula_shouldReturnAMessageIndicatingTheReturnWasSuccessful" configurationId="JUnit" />
+    <history-entry file="BookTest_getAuthor_shouldReturnNull_whenBookIsInitializedWithAnEmptyChain - 2018.05.10 at 09h 08m 28s.xml">
+      <configuration name="BookTest.getAuthor_shouldReturnNull_whenBookIsInitializedWithAnEmptyChain" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BibliotecaAppTest_whenReturnBookIsCalledByAnAvailableBookNameLikeTheMagicians_shouldReturnAMessageIndicatingTheReturnWasUnsuccessful - 2018.05.02 at 17h 32m 18s.xml">
-      <configuration name="BibliotecaAppTest.whenReturnBookIsCalledByAnAvailableBookNameLikeTheMagicians_shouldReturnAMessageIndicatingTheReturnWasUnsuccessful" configurationId="JUnit" />
+    <history-entry file="BookTest_getAuthor_shouldReturnNull_whenBookIsInitializedWithAnEmptyChainAsAuthor - 2018.05.10 at 09h 09m 59s.xml">
+      <configuration name="BookTest.getAuthor_shouldReturnNull_whenBookIsInitializedWithAnEmptyChainAsAuthor" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BibliotecaAppTest - 2018.05.02 at 17h 33m 50s.xml">
-      <configuration name="BibliotecaAppTest" configurationId="JUnit" />
+    <history-entry file="BookTest_getAuthor_shouldReturnNull_whenBookIsInitializedWithAnEmptyChainAsAuthor - 2018.05.10 at 09h 10m 30s.xml">
+      <configuration name="BookTest.getAuthor_shouldReturnNull_whenBookIsInitializedWithAnEmptyChainAsAuthor" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BibliotecaAppTest - 2018.05.02 at 17h 36m 25s.xml">
-      <configuration name="BibliotecaAppTest" configurationId="JUnit" />
+    <history-entry file="BookTest_getName_shouldReturnHandOfDoom_whenBookIsInitializedWithThatBookName - 2018.05.10 at 09h 12m 02s.xml">
+      <configuration name="BookTest.getName_shouldReturnHandOfDoom_whenBookIsInitializedWithThatBookName" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BibliotecaAppTest - 2018.05.02 at 17h 37m 02s.xml">
-      <configuration name="BibliotecaAppTest" configurationId="JUnit" />
+    <history-entry file="BookTest_getName_shouldReturnNull_whenBookIsInitializedWithAnEmptyChainAsName - 2018.05.10 at 09h 13m 03s.xml">
+      <configuration name="BookTest.getName_shouldReturnNull_whenBookIsInitializedWithAnEmptyChainAsName" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BibliotecaAppTest - 2018.05.02 at 17h 38m 52s.xml">
-      <configuration name="BibliotecaAppTest" configurationId="JUnit" />
+    <history-entry file="BookTest_getName_shouldReturnNull_whenBookIsInitializedWithAnEmptyChainAsName - 2018.05.10 at 09h 13m 28s.xml">
+      <configuration name="BookTest.getName_shouldReturnNull_whenBookIsInitializedWithAnEmptyChainAsName" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BibliotecaAppTest - 2018.05.02 at 17h 39m 31s.xml">
-      <configuration name="BibliotecaAppTest" configurationId="JUnit" />
+    <history-entry file="BookTest_getYear_shouldReturn1897_whenBookIsInitializedWithThatYearOfRelease - 2018.05.10 at 09h 19m 17s.xml">
+      <configuration name="BookTest.getYear_shouldReturn1897_whenBookIsInitializedWithThatYearOfRelease" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BookTest_whenGetYearOfReleaseIsCalledByDracula_shouldReturn1897 - 2018.05.09 at 17h 31m 28s.xml">
-      <configuration name="BookTest.whenGetYearOfReleaseIsCalledByDracula_shouldReturn1897" configurationId="JUnit" />
+    <history-entry file="BookTest_getYear_shouldReturnNull_whenBookIsInitializedWithAnEmptyChainAsName - 2018.05.10 at 09h 21m 11s.xml">
+      <configuration name="BookTest.getYear_shouldReturnNull_whenBookIsInitializedWithAnEmptyChainAsName" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BookTest_whenGetYearOfReleaseIsCalledByDracula_shouldReturn1897 - 2018.05.09 at 17h 31m 57s.xml">
-      <configuration name="BookTest.whenGetYearOfReleaseIsCalledByDracula_shouldReturn1897" configurationId="JUnit" />
+    <history-entry file="BookTest_getYear_shouldReturnZero_whenBookIsInitializedWithAnEmptyChainAsName - 2018.05.10 at 09h 22m 21s.xml">
+      <configuration name="BookTest.getYear_shouldReturnZero_whenBookIsInitializedWithAnEmptyChainAsName" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BookTest_whenGetYearOfReleaseIsCalledByDracula_shouldReturn1897 - 2018.05.10 at 08h 30m 04s.xml">
-      <configuration name="BookTest.whenGetYearOfReleaseIsCalledByDracula_shouldReturn1897" configurationId="JUnit" />
+    <history-entry file="BookTest_getYear_shouldReturnZero_whenBookIsInitializedWithAnEmptyChainAsName - 2018.05.10 at 09h 22m 30s.xml">
+      <configuration name="BookTest.getYear_shouldReturnZero_whenBookIsInitializedWithAnEmptyChainAsName" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2865000" />
+    <option name="totallyTimeSpent" value="4484000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="56" y="22" width="1624" height="1028" extended-state="6" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="9" weight="0.48764768" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.4871795" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50061053" side_tool="true" weight="0.32102564" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.19916143" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.2903564" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4993895" visible="true" weight="0.32102564" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4993895" weight="0.2902564" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4921466" visible="true" weight="0.14347291" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49244714" visible="true" weight="0.14224665" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info id="Favorites" order="2" sideWeight="0.5078534" side_tool="true" visible="true" weight="0.14347291" />
+      <window_info id="Favorites" order="2" sideWeight="0.50755286" side_tool="true" visible="true" weight="0.14224665" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -836,16 +838,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaAppTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="72" selection-start-line="72" selection-end-line="72" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -857,17 +849,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaAppTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/Book.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+        <state relative-caret-position="372">
+          <caret line="32" column="41" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BookTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="24" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="87" />
+        <state relative-caret-position="373">
+          <caret line="55" column="66" lean-forward="true" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="86" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
