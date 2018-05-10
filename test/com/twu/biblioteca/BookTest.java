@@ -2,9 +2,8 @@ package com.twu.biblioteca;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.*;
 
 public class BookTest {
 
@@ -17,7 +16,7 @@ public class BookTest {
     }
 
     @Test
-    public void whenGetAuthorIsCalledByBookNameHarryPotterReturnJKRowling(){
+    public void whenGetAuthorIsCalledByBookNameHarryPotter_shouldReturnJKRowling(){
 
         Book harryPotter = new Book("Harry Potter and The Half Blood Prince", "J. K. Rowling", 2007, true);
 
@@ -45,7 +44,8 @@ public class BookTest {
 
         Book dracula = new Book("Dracula", "Bram Stoker", 1897, true);
 
-        assertTrue(1897 == dracula.getYear());
+        //assertTrue(2000 == dracula.getYear());
+        assertThat(dracula.getYear(), is(1000));
     }
 
     @Test
@@ -69,6 +69,5 @@ public class BookTest {
 
         assertFalse(theMagicians.isAvailable());
     }
-
 
 }

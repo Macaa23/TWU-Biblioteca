@@ -6,9 +6,6 @@ public class Book {
     private String name;
     private String author;
     private int year;
-    private String ISBN;
-    private String language;
-    private String publishingHouse;
     private boolean available;
 
     public Book(String name, String author, int year, boolean available) {
@@ -16,16 +13,6 @@ public class Book {
         this.author = author;
         this.year = year;
         this.available = available;
-    }
-
-    public Book(int id, String name, String author, int year, String ISBN, String language, String publishingHouse) {
-        this.id = id;
-        this.name = name;
-        this.author = author;
-        this.year = year;
-        this.ISBN = ISBN;
-        this.language = language;
-        this.publishingHouse = publishingHouse;
     }
 
     public int getId() {
@@ -42,18 +29,6 @@ public class Book {
 
     public int getYear() {
         return this.year;
-    }
-
-    public String getISBN() {
-        return ISBN;
-    }
-
-    public String getLanguage() {
-        return language;
-    }
-
-    public String getPublishingHouse() {
-        return publishingHouse;
     }
 
     public String toString() {

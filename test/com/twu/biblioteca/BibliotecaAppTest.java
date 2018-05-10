@@ -65,7 +65,7 @@ public class BibliotecaAppTest {
 
         when(bibliotecaAppDao.getBooks()).thenReturn(books);
 
-        assertTrue(bibliotecaApp.getBooks().size() == 3);
+        assertTrue(bibliotecaApp.getBooks().size() == books.size());
     }
 
     @Test

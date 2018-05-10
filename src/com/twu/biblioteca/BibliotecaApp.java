@@ -16,9 +16,8 @@ public class BibliotecaApp {
         int option = 0;
 
         System.out.println(bibliotecaApp.getWelcomeMessage());
-        System.out.println(bibliotecaApp.printMenu());
-        System.out.println("Select an option number\n");
         do {
+            System.out.println(bibliotecaApp.printMenu());
             option = bibliotecaApp.readMenuOption();
             if (option == 0) continue;
             System.out.println(bibliotecaApp.executeMenuOption(option));
@@ -88,7 +87,8 @@ public class BibliotecaApp {
         for (int i = 0; i < menuOptions.size(); i++) {
             menu += i + 1 + ". " + menuOptions.get(i) + "\n";
         }
-        return menu;
+        return menu +
+                "\nSelect an option number\n";
     }
 
 
@@ -128,7 +128,7 @@ public class BibliotecaApp {
             if (requiredBook.isAvailable()) {
                 requiredBook.setAvailability(false);
                 bibliotecaAppDao.updateBook(requiredBook);
-                return "Thank you! Enjoy the book";
+                return "\nThank you! Enjoy the book\n";
             } else return "That book is not available.";
         } else {
             return "That book is not in the library registries.";
@@ -141,7 +141,7 @@ public class BibliotecaApp {
             if (!requiredBook.isAvailable()) {
                 requiredBook.setAvailability(true);
                 bibliotecaAppDao.updateBook(requiredBook);
-                return "Thank you for returning the book.";
+                return "\nThank you for returning the book.\n";
             } else return "That is not a valid book to return.";
         } else {
             return "That book is not in the library registries.";
@@ -163,6 +163,6 @@ public class BibliotecaApp {
             bookName = input.nextLine();
             result = returnBook(bookName);
         } else if (option == QUIT_MENU_OPTION) return "Execution Finished. Have a nice day :)";
-        return result + "\nSelect an option number\n";
+        return result;
     }
 }
