@@ -16,24 +16,27 @@ import java.io.InputStream;
 import java.io.PrintStream;
 import java.util.LinkedList;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertEquals;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.core.IsNull.nullValue;
+import static org.junit.Assert.*;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class BibliotecaAppTest {
 
     private LinkedList<Book> books = new LinkedList<Book>();
+    private LinkedList<Book> emptyBookList = new LinkedList<Book>();
     private final ByteArrayOutputStream wrongInput = new ByteArrayOutputStream();
     private final ByteArrayOutputStream otherOptionInput = new ByteArrayOutputStream();
+    Book dracula = new Book("Dracula", "Bram Stoker", 1897, true);
+    Book theMagicians = new Book("The Magicians", "Lev Grossman", 2009, true);
+    Book casa = new Book("La Casa de los Espiritus", "Isabel Allende", 1982, true);
 
     @Before
     public void setUp() {
-
-        books.add(new Book("Dracula", "Bram Stoker", 1897, true));
-        books.add(new Book("The Magicians", "Lev Grossman", 2009, true));
-        books.add(new Book("La Casa de los Espiritus", "Isabel Allende", 1982, true));
+        books.add(dracula);
+        books.add(theMagicians);
+        books.add(casa);
 
         System.setErr(new PrintStream(wrongInput));
         System.setOut(new PrintStream(otherOptionInput));
@@ -55,51 +58,49 @@ public class BibliotecaAppTest {
     public ExpectedException expectedEx = ExpectedException.none();
 
     @Test
-    public void whenGetWelcomeMessageIsCalled_shouldReturnAWelcomeMessageForTheUser(){
+    public void getWelcomeMessage_shouldReturnAWelcomeMessageForTheUser_whenTheUserInterfaceIsStarted(){
         BibliotecaApp userInterface = new BibliotecaApp();
-        assertEquals("Welcome to the Bangalore Public Library System\n\n", userInterface.getWelcomeMessage());
+        assertThat(userInterface.getWelcomeMessage(), is("Welcome to the Bangalore Public Library System\n\n"));
     }
 
     @Test
-    public void whenGetBooksIsCalled_shouldReturnAListOfThreeBooks(){
-
+    public void getBooks_shouldReturnAListOfThreeBooks_whenThereAreThreeBookObjectsAddedToTheList(){
         when(bibliotecaAppDao.getBooks()).thenReturn(books);
-
-        assertTrue(bibliotecaApp.getBooks().size() == books.size());
+        assertThat(bibliotecaApp.getBooks().size(), is(books.size()));
     }
 
     @Test
-    public void whenfindBookByNameIsCalledByDracula_shouldReturnABookNamedDracula(){
-
-        when(bibliotecaAppDao.findByName("Dracula")).thenReturn(books.get(0));
-
-        assertEquals(books.get(0).getName(), bibliotecaApp.findBookByName("Dracula").getName());
+    public void findBookByName_shouldReturnDracula_whenThereIsABookInitializedWithThatName(){
+        when(bibliotecaAppDao.findByName("Dracula")).thenReturn(dracula);
+        assertThat(bibliotecaApp.findBookByName("Dracula").getName(), is(dracula.getName()));
     }
 
     @Test
-    public void whenfindBookByNameIsCalledByTheMagicians_shouldReturnABookNamedTheMagicians(){
-
-        when(bibliotecaAppDao.findByName("The Magicians")).thenReturn(books.get(1));
-
-        assertEquals(books.get(1).getName(), bibliotecaApp.findBookByName("The Magicians").getName());
+    public void findBookByName_shouldReturnNull_whenThereAreNoBooksInitializedWithTheSearchedName(){
+        when(bibliotecaAppDao.findByName("No Name")).thenReturn(null);
+        assertThat(bibliotecaApp.findBookByName("No Name"), is(nullValue()));
     }
 
     @Test
-    public void whenListAllBooksIsCalled_shouldReturnADetailedListOfAllBooks(){
-
+    public void listAllBooks_shouldReturnADetailedListOfThreeBooks_whenThereAreThreeBooksRegistered(){
         when(bibliotecaAppDao.getBooks()).thenReturn(books);
-        assertEquals("     List of all books:\n\n" + "Dracula     Bram Stoker     1897\n" +
+        assertThat(bibliotecaApp.listAllBooks(), is("     List of all books:\n\n" + "Dracula     Bram Stoker     1897\n" +
                 "The Magicians     Lev Grossman     2009\n" +
-                "La Casa de los Espiritus     Isabel Allende     1982\n", bibliotecaApp.listAllBooks());
+                "La Casa de los Espiritus     Isabel Allende     1982\n"));
     }
 
     @Test
-    public void whenListBooksNamesIsCalled_shouldReturnAListOfBooksByName(){
+    public void listAllBooks_shouldReturnAMessageIndicatingThatThereAreNoBooks_whenThereAreNoBooksRegistered(){
+        when(bibliotecaAppDao.getBooks()).thenReturn(emptyBookList);
+        assertThat(bibliotecaApp.listAllBooks(), is("     There Are No Books Registered\n"));
+    }
 
+    @Test
+    public void listBooksNames_shouldReturnTheNameOfThreeBooks_whenThereAreThreeBooksRegistered(){
         when(bibliotecaAppDao.getBooks()).thenReturn(books);
-        assertEquals("     List of all books by name:\n\n" + "Dracula\n" +
+        assertThat(bibliotecaApp.listBooksNames(), is("     List of all books by name:\n\n" + "Dracula\n" +
                 "The Magicians\n" +
-                "La Casa de los Espiritus\n", bibliotecaApp.listBooksNames());
+                "La Casa de los Espiritus\n"));
     }
 
     @Test
@@ -157,7 +158,7 @@ public class BibliotecaAppTest {
     @Test
     public void whenCheckoutBookIsCalledByAnAvailableTitleLikeDracula_shouldReturnAMessageIndicatingTheCheckoutWasSuccessful(){
         when(bibliotecaAppDao.findByName("Dracula")).thenReturn(books.get(0));
-        assertEquals("Thank you! Enjoy the book", bibliotecaApp.checkoutBook("Dracula"));
+        assertEquals("\nThank you! Enjoy the book\n", bibliotecaApp.checkoutBook("Dracula"));
     }
 
     @Test
@@ -198,7 +199,7 @@ public class BibliotecaAppTest {
     public void whenReturnBookIsCalledByAnUnavailableBookNameLikeDracula_shouldReturnAMessageIndicatingTheReturnWasSuccessful(){
         books.get(0).setAvailability(false);
         when(bibliotecaAppDao.findByName("Dracula")).thenReturn(books.get(0));
-        assertEquals("Thank you for returning the book.", bibliotecaApp.returnBook("Dracula"));
+        assertEquals("\nThank you for returning the book.\n", bibliotecaApp.returnBook("Dracula"));
     }
 
     @Test
