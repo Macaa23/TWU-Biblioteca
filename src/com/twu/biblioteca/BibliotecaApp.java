@@ -63,6 +63,7 @@ public class BibliotecaApp {
 
     public String listBooksNames() {
         LinkedList<Book> allBooks = this.getBooks();
+        if(allBooks.isEmpty()) return "     There Are No Books Registered\n";
         String bookList = "     List of all books by name:\n\n";
         Book tempBook;
         for (int i = 0; i < allBooks.size(); i++) {
