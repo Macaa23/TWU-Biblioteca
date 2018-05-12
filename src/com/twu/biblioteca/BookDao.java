@@ -2,13 +2,11 @@ package com.twu.biblioteca;
 
 import java.util.LinkedList;
 
-public interface BibliotecaAppDao {
+public interface BookDao {
 
-    LinkedList<Book> getBooks();
+    LinkedList<Book> getAll();
 
     Book findByName(String bookName);
 
     void updateBook(Book book);
-
-    LinkedList<Movie> getMovies();
 }

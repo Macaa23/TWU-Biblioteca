@@ -4,10 +4,10 @@ import java.util.LinkedList;
 
 public class MoviesController {
 
-    private BibliotecaAppDao bibliotecaAppDao = new BibliotecaAppDaoImpl();
+    private MovieDao movieDao = new MovieDaoImpl();
 
     public String listMovies() {
-        LinkedList<Movie> movies = bibliotecaAppDao.getMovies();
+        LinkedList<Movie> movies = movieDao.getAll();
         if(movies.isEmpty()) return "     There Are No Books Registered\n";
         String movieList = "     List of all movies:\n\n";
         Movie tempMovie;
@@ -19,7 +19,7 @@ public class MoviesController {
     }
 
     public String listAvailableMovies() {
-        LinkedList<Movie> movies = bibliotecaAppDao.getMovies();
+        LinkedList<Movie> movies = movieDao.getAll();
         String titleMessage = "     List of all available movies:\n\n";
         String movieList = titleMessage;
         Movie tempMovie;
@@ -32,4 +32,6 @@ public class MoviesController {
         if(movieList.equals(titleMessage)) return "     There Are No Available Books\n";
         return movieList;
     }
+
+
 }

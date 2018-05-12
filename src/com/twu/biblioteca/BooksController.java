@@ -4,14 +4,14 @@ import java.util.LinkedList;
 
 public class BooksController {
 
-    private BibliotecaAppDao bibliotecaAppDao = new BibliotecaAppDaoImpl();
+    private BookDao bookDao = new BookDaoImpl();
 
     public Book findBookByName(String bookName) {
-        return bibliotecaAppDao.findByName(bookName);
+        return bookDao.findByName(bookName);
     }
 
     public String listAllBooks() {
-        LinkedList<Book> allBooks = bibliotecaAppDao.getBooks();
+        LinkedList<Book> allBooks = bookDao.getAll();
         if(allBooks.isEmpty()) return "     There Are No Books Registered\n";
         String bookList = "     List of all books:\n\n";
         Book tempBook;
@@ -23,7 +23,7 @@ public class BooksController {
     }
 
     public String listAvailableBooks() {
-        LinkedList<Book> allBooks = bibliotecaAppDao.getBooks();
+        LinkedList<Book> allBooks = bookDao.getAll();
         String bookList = "     List of all available books:\n\n";
         Book tempBook;
         for (int i = 0; i < allBooks.size(); i++) {
@@ -40,7 +40,7 @@ public class BooksController {
         if (requiredBook != null) {
             if (requiredBook.isAvailable()) {
                 requiredBook.setAvailability(false);
-                bibliotecaAppDao.updateBook(requiredBook);
+                bookDao.updateBook(requiredBook);
                 return "\nThank you! Enjoy the book\n";
             } else return "That book is not available.";
         } else {
@@ -53,7 +53,7 @@ public class BooksController {
         if (requiredBook != null) {
             if (!requiredBook.isAvailable()) {
                 requiredBook.setAvailability(true);
-                bibliotecaAppDao.updateBook(requiredBook);
+                bookDao.updateBook(requiredBook);
                 return "\nThank you for returning the book.\n";
             } else return "That is not a valid book to return.";
         } else {

@@ -2,12 +2,12 @@ package com.twu.biblioteca;
 
 import java.util.LinkedList;
 
-public class BibliotecaAppDaoImpl implements BibliotecaAppDao{
+public class BookDaoImpl implements BookDao {
 
     LinkedList<Book> books;
     LinkedList<Movie> movies;
 
-    public BibliotecaAppDaoImpl() {
+    public BookDaoImpl() {
         books = new LinkedList<Book>();
         movies = new LinkedList<Movie>();
         books.add(new Book("Dracula", "Bram Stoker", 1897, true));
@@ -18,7 +18,7 @@ public class BibliotecaAppDaoImpl implements BibliotecaAppDao{
     }
 
     @Override
-    public LinkedList<Book> getBooks() {
+    public LinkedList<Book> getAll() {
         return books;
     }
 
@@ -37,10 +37,5 @@ public class BibliotecaAppDaoImpl implements BibliotecaAppDao{
                 books.get(i).setAvailability(book.isAvailable());
             }
         }
-    }
-
-    @Override
-    public LinkedList<Movie> getMovies() {
-        return movies;
     }
 }

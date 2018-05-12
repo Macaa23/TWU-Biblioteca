@@ -48,7 +48,7 @@ public class BibliotecaAppTest {
     }
 
     @Mock
-    private BibliotecaAppDao bibliotecaAppDao;
+    private BookDao bookDao;
 
     @InjectMocks
     private BibliotecaApp bibliotecaApp;
@@ -96,7 +96,7 @@ public class BibliotecaAppTest {
 
     @Test
     public void executeMenuOption_shouldReturnAListIncludingTheMagicians_whenTheInputIsOne(){
-        when(bibliotecaAppDao.getBooks()).thenReturn(books);
+        when(bookDao.getAll()).thenReturn(books);
         assertThat(bibliotecaApp.executeMenuOption(1).contains(theMagicians.getName()), is(true));
     }
 

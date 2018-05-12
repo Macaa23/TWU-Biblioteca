@@ -5,8 +5,6 @@ import java.util.Scanner;
 
 public class BibliotecaApp {
 
-    private BibliotecaAppDao bibliotecaAppDao = new BibliotecaAppDaoImpl();
-
     BooksController booksController = new BooksController();
     MoviesController moviesController = new MoviesController();
 

@@ -27,7 +27,7 @@ public class MoviesControllerTest {
     }
 
     @Mock
-    private BibliotecaAppDao bibliotecaAppDao;
+    private MovieDao movieDao;
 
     @InjectMocks
     private MoviesController moviesController;
@@ -35,27 +35,35 @@ public class MoviesControllerTest {
 
     @Test
     public void listMovies_shouldPrintTwoMovies_whenThereAreTwoMoviesRegistered(){
-        when(bibliotecaAppDao.getMovies()).thenReturn(movies);
+        when(movieDao.getAll()).thenReturn(movies);
         assertThat(moviesController.listMovies().contains("Inception"), is(true));
     }
 
     @Test
     public void listMovies_shouldPrintErrorMessage_whenThereAreNoMoviesRegistered(){
         LinkedList<Movie> noMovies = new LinkedList<Movie>();
-        when(bibliotecaAppDao.getMovies()).thenReturn(noMovies);
+        when(movieDao.getAll()).thenReturn(noMovies);
         assertThat(moviesController.listMovies(), is("     There Are No Books Registered\n"));
     }
 
     @Test
     public void listAvailableMovies_shouldReturnOneMovie_whenThereIsOneMovieAvailable(){
-        when(bibliotecaAppDao.getMovies()).thenReturn(movies);
+        when(movieDao.getAll()).thenReturn(movies);
         assertThat(moviesController.listAvailableMovies().contains("Lucy"), is(false));
     }
 
     @Test
     public void listAvailableMovies_shouldReturnErrorMessage_whenThereAreNoMoviesAvailable(){
         inception.setAvailability(false);
-        when(bibliotecaAppDao.getMovies()).thenReturn(movies);
+        when(movieDao.getAll()).thenReturn(movies);
         assertThat(moviesController.listAvailableMovies(), is("     There Are No Available Books\n"));
     }
+    /*
+    @Test
+    public void checkoutMovie_shouldReturnAMessageIndicatingThecheckoutWasSuccessful_whenTheMovieIsAvailable(){
+        when(movieDao.findByName()).thenReturn(inception);
+        assertThat(moviesController.checkoutMovie("Inception"), is("\nThank you! Enjoy the movie\n"));
+    }
+
+    */
 }
