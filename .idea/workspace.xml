@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7bb13f41-d9ae-49d4-a271-745aef076cce" name="Default" comment="" />
+    <list default="true" id="7bb13f41-d9ae-49d4-a271-745aef076cce" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/UserControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/UserControllerTest.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -51,8 +54,8 @@
       <file leaf-file-name="UserControllerTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/UserControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="34" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="86" />
+            <state relative-caret-position="362">
+              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -63,12 +66,17 @@
       <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-              <folding>
-                <element signature="e#112#113#0" expanded="true" />
-                <element signature="e#138#139#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="270">
+              <caret line="18" column="71" lean-forward="true" selection-start-line="18" selection-start-column="71" selection-end-line="18" selection-end-column="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BibliotecaAppTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaAppTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1152">
+              <caret line="10" column="44" lean-forward="true" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -86,22 +94,10 @@
         <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/UserDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
-              <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
               <folding>
                 <element signature="e#127#128#0" expanded="true" />
                 <element signature="e#154#155#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BookTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BookTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="29" lean-forward="true" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -272,6 +268,29 @@
       </option>
       <patterns />
     </configuration>
+    <configuration name="UserControllerTest.checkLibraryNumber_shouldReturnFalse_whenTheNumberDoesntExistsInTheRegistries" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="biblioteca" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.twu.biblioteca.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
+      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.UserControllerTest" />
+      <option name="METHOD_NAME" value="checkLibraryNumber_shouldReturnFalse_whenTheNumberDoesntExistsInTheRegistries" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
     <configuration name="UserControllerTest.checkLibraryNumber_shouldReturnTrue_whenTheNumberExistsInTheRegistries" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="biblioteca" />
       <extension name="coverage">
@@ -309,29 +328,6 @@
       <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.UserTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="UserTest.getName_shouldReturnNull_whenThereIsAnUserInitializedWithEmptyChainAsLibraryNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="biblioteca" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.twu.biblioteca.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
-      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.UserTest" />
-      <option name="METHOD_NAME" value="getName_shouldReturnNull_whenThereIsAnUserInitializedWithEmptyChainAsLibraryNumber" />
-      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -403,19 +399,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="JUnit.UserTest.getName_shouldReturnNull_whenThereIsAnUserInitializedWithEmptyChainAsLibraryNumber" />
       <item itemvalue="JUnit.UserTest" />
       <item itemvalue="JUnit.UserTest.getName_shouldReturnNull_whenThereIsAnUserInitializedWithEmptyChainAsPassword" />
       <item itemvalue="JUnit.UserControllerTest.checkLibraryNumber_shouldReturnTrue_whenTheNumberExistsInTheRegistries" />
       <item itemvalue="JUnit.UserControllerTest" />
+      <item itemvalue="JUnit.UserControllerTest.checkLibraryNumber_shouldReturnFalse_whenTheNumberDoesntExistsInTheRegistries" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.UserControllerTest" />
         <item itemvalue="JUnit.UserControllerTest.checkLibraryNumber_shouldReturnTrue_whenTheNumberExistsInTheRegistries" />
+        <item itemvalue="JUnit.UserControllerTest.checkLibraryNumber_shouldReturnFalse_whenTheNumberDoesntExistsInTheRegistries" />
         <item itemvalue="JUnit.UserTest" />
         <item itemvalue="JUnit.UserTest.getName_shouldReturnNull_whenThereIsAnUserInitializedWithEmptyChainAsPassword" />
-        <item itemvalue="JUnit.UserTest.getName_shouldReturnNull_whenThereIsAnUserInitializedWithEmptyChainAsLibraryNumber" />
       </list>
     </recent_temporary>
   </component>
@@ -433,44 +429,44 @@
       <workItem from="1525951436644" duration="395000" />
       <workItem from="1525952757457" duration="8416000" />
       <workItem from="1525998541530" duration="498000" />
-      <workItem from="1526145929045" duration="13777000" />
+      <workItem from="1526145929045" duration="15832000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="BibliotecaAppTest_printMenu_shouldReturnAStringContainingCheckoutMovieOption - 2018.05.12 at 18h 40m 58s.xml">
-      <configuration name="BibliotecaAppTest.printMenu_shouldReturnAStringContainingCheckoutMovieOption" configurationId="JUnit" />
+    <history-entry file="UserControllerTest_checkLibraryNumber_shouldReturnFalse_whenTheNumberDoesntExistsInTheRegistries - 2018.05.12 at 20h 18m 25s.xml">
+      <configuration name="UserControllerTest.checkLibraryNumber_shouldReturnFalse_whenTheNumberDoesntExistsInTheRegistries" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BibliotecaAppTest_printMenu_shouldReturnAStringContainingCheckoutMovieOption - 2018.05.12 at 18h 42m 34s.xml">
-      <configuration name="BibliotecaAppTest.printMenu_shouldReturnAStringContainingCheckoutMovieOption" configurationId="JUnit" />
+    <history-entry file="UserControllerTest_checkLibraryNumber_shouldReturnFalse_whenTheNumberDoesntExistsInTheRegistries - 2018.05.12 at 20h 19m 00s.xml">
+      <configuration name="UserControllerTest.checkLibraryNumber_shouldReturnFalse_whenTheNumberDoesntExistsInTheRegistries" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BibliotecaAppTest - 2018.05.12 at 18h 42m 38s.xml">
-      <configuration name="BibliotecaAppTest" configurationId="JUnit" />
+    <history-entry file="UserControllerTest - 2018.05.12 at 20h 26m 31s.xml">
+      <configuration name="UserControllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BookTest - 2018.05.12 at 19h 26m 26s.xml">
-      <configuration name="BookTest" configurationId="JUnit" />
+    <history-entry file="UserControllerTest_checkLibraryNumber_shouldReturnTrue_whenTheNumberExistsInTheRegistries - 2018.05.12 at 20h 37m 27s.xml">
+      <configuration name="UserControllerTest.checkLibraryNumber_shouldReturnTrue_whenTheNumberExistsInTheRegistries" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserTest_getName_shouldReturnRocioSepulveda_whenThereIsAnUserInitializedWithThatName - 2018.05.12 at 19h 37m 43s.xml">
-      <configuration name="UserTest.getName_shouldReturnRocioSepulveda_whenThereIsAnUserInitializedWithThatName" configurationId="JUnit" />
+    <history-entry file="UserControllerTest - 2018.05.12 at 20h 38m 49s.xml">
+      <configuration name="UserControllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserTest_getName_shouldReturnNull_whenThereIsAnUserInitializedWithEmptyChainAsLibraryNumber - 2018.05.12 at 19h 50m 29s.xml">
-      <configuration name="UserTest.getName_shouldReturnNull_whenThereIsAnUserInitializedWithEmptyChainAsLibraryNumber" configurationId="JUnit" />
+    <history-entry file="UserControllerTest - 2018.05.12 at 20h 39m 26s.xml">
+      <configuration name="UserControllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserTest - 2018.05.12 at 19h 51m 19s.xml">
-      <configuration name="UserTest" configurationId="JUnit" />
+    <history-entry file="UserControllerTest - 2018.05.12 at 20h 45m 10s.xml">
+      <configuration name="UserControllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserTest_getName_shouldReturnNull_whenThereIsAnUserInitializedWithEmptyChainAsPassword - 2018.05.12 at 19h 51m 45s.xml">
-      <configuration name="UserTest.getName_shouldReturnNull_whenThereIsAnUserInitializedWithEmptyChainAsPassword" configurationId="JUnit" />
+    <history-entry file="UserControllerTest - 2018.05.12 at 20h 47m 48s.xml">
+      <configuration name="UserControllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserTest - 2018.05.12 at 19h 55m 49s.xml">
-      <configuration name="UserTest" configurationId="JUnit" />
+    <history-entry file="UserControllerTest - 2018.05.12 at 20h 48m 55s.xml">
+      <configuration name="UserControllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserTest - 2018.05.12 at 20h 00m 41s.xml">
-      <configuration name="UserTest" configurationId="JUnit" />
+    <history-entry file="UserControllerTest - 2018.05.12 at 20h 49m 15s.xml">
+      <configuration name="UserControllerTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25183000" />
+    <option name="totallyTimeSpent" value="27238000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -486,11 +482,11 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993895" visible="true" weight="0.26871794" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4993895" visible="true" weight="0.26871794" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4993895" weight="0.16307692" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6676017" visible="true" weight="0.16727717" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6676017" visible="true" weight="0.16727717" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -856,26 +852,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaAppTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="676">
-          <caret line="127" lean-forward="true" selection-start-line="127" selection-end-line="127" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BookTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="29" lean-forward="true" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -895,6 +871,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/UserTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -905,10 +888,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BookTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="29" lean-forward="true" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/UserDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
           <folding>
             <element signature="e#127#128#0" expanded="true" />
             <element signature="e#154#155#0" expanded="true" />
@@ -916,28 +909,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/UserDao.java">
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaAppTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="-1152">
+          <caret line="10" column="44" lean-forward="true" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-          <folding>
-            <element signature="e#112#113#0" expanded="true" />
-            <element signature="e#138#139#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="270">
+          <caret line="18" column="71" lean-forward="true" selection-start-line="18" selection-start-column="71" selection-end-line="18" selection-end-column="71" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/UserControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="34" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="86" />
+        <state relative-caret-position="362">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
