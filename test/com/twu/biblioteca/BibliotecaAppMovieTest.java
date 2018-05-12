@@ -17,8 +17,8 @@ import java.util.LinkedList;
 public class BibliotecaAppMovieTest {
 
     private LinkedList<Movie> movies = new LinkedList<Movie>();
-    Movie inception = new Movie("Inception", 2010, "Christopher Nolan", 8.8);
-    Movie lucy = new Movie("Lucy", 2014, "Luc Besson", 6.4);
+    Movie inception = new Movie("Inception", 2010, "Christopher Nolan", 8.8, true);
+    Movie lucy = new Movie("Lucy", 2014, "Luc Besson", 6.4, false);
 
     @Before
     public void setUp(){

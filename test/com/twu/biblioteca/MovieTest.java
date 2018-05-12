@@ -17,8 +17,8 @@ public class MovieTest {
     @Before
     public void setUp(){
         UNRATED = 0;
-        inception = new Movie("Inception", 2010, "Christopher Nolan", UNRATED);
-        noName = new Movie("", 2010, "Christopher Nolan", 5);
+        inception = new Movie("Inception", 2010, "Christopher Nolan", UNRATED, true);
+        noName = new Movie("", 2010, "Christopher Nolan", 5, true);
     }
 
     @Test
@@ -59,6 +59,11 @@ public class MovieTest {
     @Test
     public void getRate_shouldReturnZero_whenThereIsAMovieInitializedWithEmptyChainAsName(){
         assertThat(noName.getRate(), is(0.0));
+    }
+
+    @Test
+    public void getAvailability_shouldReturnTrue_whenThereIsAMovieInitializedWithThatAvailability(){
+        assertThat(inception.isAvailable(), is(true));
     }
 
 }

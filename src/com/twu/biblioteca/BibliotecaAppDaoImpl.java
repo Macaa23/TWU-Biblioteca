@@ -13,8 +13,8 @@ public class BibliotecaAppDaoImpl implements BibliotecaAppDao{
         books.add(new Book("Dracula", "Bram Stoker", 1897, true));
         books.add(new Book("The Magicians", "Lev Grossman", 2009, true));
         books.add(new Book("La Casa de los Espiritus", "Isabel Allende", 1982, true));
-        movies.add(new Movie("Inception", 2010, "Christopher Nolan", 8.8));
-        movies.add(new Movie("Lucy", 2014, "Luc Besson", 6.4));
+        movies.add(new Movie("Inception", 2010, "Christopher Nolan", 8.8, true));
+        movies.add(new Movie("Lucy", 2014, "Luc Besson", 6.4, true));
     }
 
     @Override

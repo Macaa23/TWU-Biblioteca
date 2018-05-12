@@ -6,13 +6,15 @@ public class Movie {
     int year;
     String director;
     double rate;
+    boolean availability;
 
 
-    public Movie(String name, int year, String director, double rate) {
+    public Movie(String name, int year, String director, double rate, boolean availability) {
         this.name = name;
         this.year = year;
         this.director = director;
         this.rate = rate;
+        this.availability = availability;
     }
 
     public String getName() {
@@ -33,5 +35,13 @@ public class Movie {
     public double getRate() {
         if(this.name.equals("")) return 0;
         return this.rate;
+    }
+
+    public boolean isAvailable() {
+        return availability;
+    }
+
+    public void setAvailability(boolean availability) {
+        this.availability = availability;
     }
 }
