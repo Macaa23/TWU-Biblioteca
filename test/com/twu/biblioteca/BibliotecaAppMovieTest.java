@@ -30,31 +30,32 @@ public class BibliotecaAppMovieTest {
     private BibliotecaAppDao bibliotecaAppDao;
 
     @InjectMocks
-    private BibliotecaApp bibliotecaApp;
+    private MoviesController moviesController;
+
 
     @Test
     public void listMovies_shouldPrintTwoMovies_whenThereAreTwoMoviesRegistered(){
         when(bibliotecaAppDao.getMovies()).thenReturn(movies);
-        assertThat(bibliotecaApp.listMovies().contains("Inception"), is(true));
+        assertThat(moviesController.listMovies().contains("Inception"), is(true));
     }
 
     @Test
     public void listMovies_shouldPrintErrorMessage_whenThereAreNoMoviesRegistered(){
         LinkedList<Movie> noMovies = new LinkedList<Movie>();
         when(bibliotecaAppDao.getMovies()).thenReturn(noMovies);
-        assertThat(bibliotecaApp.listMovies(), is("     There Are No Books Registered\n"));
+        assertThat(moviesController.listMovies(), is("     There Are No Books Registered\n"));
     }
 
     @Test
     public void listAvailableMovies_shouldReturnOneMovie_whenThereIsOneMovieAvailable(){
         when(bibliotecaAppDao.getMovies()).thenReturn(movies);
-        assertThat(bibliotecaApp.listAvailableMovies().contains("Lucy"), is(false));
+        assertThat(moviesController.listAvailableMovies().contains("Lucy"), is(false));
     }
 
     @Test
     public void listAvailableMovies_shouldReturnErrorMessage_whenThereAreNoMoviesAvailable(){
         inception.setAvailability(false);
         when(bibliotecaAppDao.getMovies()).thenReturn(movies);
-        assertThat(bibliotecaApp.listAvailableMovies(), is("     There Are No Available Books\n"));
+        assertThat(moviesController.listAvailableMovies(), is("     There Are No Available Books\n"));
     }
 }

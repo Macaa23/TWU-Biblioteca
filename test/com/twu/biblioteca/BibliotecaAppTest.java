@@ -55,6 +55,8 @@ public class BibliotecaAppTest {
     @InjectMocks
     private BibliotecaApp bibliotecaApp;
 
+    @InjectMocks BooksController booksController;
+
     @Rule
     public ExpectedException expectedEx = ExpectedException.none();
 
@@ -65,27 +67,21 @@ public class BibliotecaAppTest {
     }
 
     @Test
-    public void getBooks_shouldReturnAListOfThreeBooks_whenThereAreThreeBookObjectsAddedToTheList(){
-        when(bibliotecaAppDao.getBooks()).thenReturn(books);
-        assertThat(bibliotecaApp.getBooks().size(), is(books.size()));
-    }
-
-    @Test
     public void findBookByName_shouldReturnDracula_whenThereIsABookInitializedWithThatName(){
         when(bibliotecaAppDao.findByName(DRACULA_NAME)).thenReturn(dracula);
-        assertThat(bibliotecaApp.findBookByName(DRACULA_NAME).getName(), is(dracula.getName()));
+        assertThat(booksController.findBookByName(DRACULA_NAME).getName(), is(dracula.getName()));
     }
 
     @Test
     public void findBookByName_shouldReturnNull_whenThereAreNoBooksInitializedWithTheSearchedName(){
         when(bibliotecaAppDao.findByName("No Name")).thenReturn(null);
-        assertThat(bibliotecaApp.findBookByName("No Name"), is(nullValue()));
+        assertThat(booksController.findBookByName("No Name"), is(nullValue()));
     }
 
     @Test
     public void listAllBooks_shouldReturnADetailedListOfThreeBooks_whenThereAreThreeBooksRegistered(){
         when(bibliotecaAppDao.getBooks()).thenReturn(books);
-        assertThat(bibliotecaApp.listAllBooks(), is("     List of all books:\n\n" + "Dracula     Bram Stoker     1897\n" +
+        assertThat(booksController.listAllBooks(), is("     List of all books:\n\n" + "Dracula     Bram Stoker     1897\n" +
                 "The Magicians     Lev Grossman     2009\n" +
                 "La Casa de los Espiritus     Isabel Allende     1982\n"));
     }
@@ -93,21 +89,7 @@ public class BibliotecaAppTest {
     @Test
     public void listAllBooks_shouldReturnAMessageIndicatingThatThereAreNoBooks_whenThereAreNoBooksRegistered(){
         when(bibliotecaAppDao.getBooks()).thenReturn(emptyBookList);
-        assertThat(bibliotecaApp.listAllBooks(), is("     There Are No Books Registered\n"));
-    }
-
-    @Test
-    public void listBooksNames_shouldReturnTheNameOfThreeBooks_whenThereAreThreeBooksRegistered(){
-        when(bibliotecaAppDao.getBooks()).thenReturn(books);
-        assertThat(bibliotecaApp.listBooksNames(), is("     List of all books by name:\n\n" + "Dracula\n" +
-                "The Magicians\n" +
-                "La Casa de los Espiritus\n"));
-    }
-
-    @Test
-    public void listBooksNames_shouldReturnAMessageIndicatingThatThereAreNoBooks_whenThereAreNoBooksRegistered(){
-        when(bibliotecaAppDao.getBooks()).thenReturn(emptyBookList);
-        assertThat(bibliotecaApp.listBooksNames(), is("     There Are No Books Registered\n"));
+        assertThat(booksController.listAllBooks(), is("     There Are No Books Registered\n"));
     }
 
     @Test
@@ -161,26 +143,26 @@ public class BibliotecaAppTest {
     @Test
     public void checkoutBook_shouldReturnAMessageIndicatingTheCheckoutWasSuccessful_whenTheBookIsAvailable(){
         when(bibliotecaAppDao.findByName(DRACULA_NAME)).thenReturn(dracula);
-        assertThat(bibliotecaApp.checkoutBook(DRACULA_NAME), is("\nThank you! Enjoy the book\n"));
+        assertThat(booksController.checkoutBook(DRACULA_NAME), is("\nThank you! Enjoy the book\n"));
     }
 
     @Test
     public void checkoutBook_shouldReturnAMessageIndicatingTheCheckoutWasUnsuccessful_whenTheBookIsUnavailable(){
         theMagicians.setAvailability(false);
         when(bibliotecaAppDao.findByName("The Magicians")).thenReturn(theMagicians);
-        assertThat(bibliotecaApp.checkoutBook("The Magicians"), is("That book is not available."));
+        assertThat(booksController.checkoutBook("The Magicians"), is("That book is not available."));
     }
 
     @Test
     public void checkoutBook_shouldReturnAMessageIndicatingTheTitleDoesNotExistsInTheLibrary_whenTheBookHasntBeenCreated(){
         when(bibliotecaAppDao.findByName("Some Ghost Book")).thenReturn(null);
-        assertThat(bibliotecaApp.checkoutBook("Some Ghost Book"), is("That book is not in the library registries."));
+        assertThat(booksController.checkoutBook("Some Ghost Book"), is("That book is not in the library registries."));
     }
 
     @Test
     public void checkoutBook_shouldMakeABookUnavailable_whenTheBookExistsAndIsAvailable(){
         when(bibliotecaAppDao.findByName(DRACULA_NAME)).thenReturn(dracula);
-        bibliotecaApp.checkoutBook(DRACULA_NAME);
+        booksController.checkoutBook(DRACULA_NAME);
         assertThat(dracula.isAvailable(), is(false));
     }
 
@@ -189,7 +171,7 @@ public class BibliotecaAppTest {
         dracula.setAvailability(false);
         when(bibliotecaAppDao.findByName(DRACULA_NAME)).thenReturn(dracula);
         when(bibliotecaAppDao.getBooks()).thenReturn(books);
-        assertThat(bibliotecaApp.listAvailableBooks().contains(DRACULA_NAME), is(false));
+        assertThat(booksController.listAvailableBooks().contains(DRACULA_NAME), is(false));
     }
 
     @Test
@@ -201,13 +183,13 @@ public class BibliotecaAppTest {
     public void returnBook_shouldReturnAMessageIndicatingTheReturnWasSuccessful_whenTheBookToReturnIsUnavailable(){
         dracula.setAvailability(false);
         when(bibliotecaAppDao.findByName(DRACULA_NAME)).thenReturn(dracula);
-        assertThat( bibliotecaApp.returnBook(DRACULA_NAME), is("\nThank you for returning the book.\n"));
+        assertThat( booksController.returnBook(DRACULA_NAME), is("\nThank you for returning the book.\n"));
     }
 
     @Test
     public void returnBook_shouldReturnAMessageIndicatingTheReturnWasUnsuccessful_whenTheBookIsAvailable(){
         theMagicians.setAvailability(true);
         when(bibliotecaAppDao.findByName("The Magicians")).thenReturn(theMagicians);
-        assertThat(bibliotecaApp.returnBook("The Magicians"), is("That is not a valid book to return."));
+        assertThat(booksController.returnBook("The Magicians"), is("That is not a valid book to return."));
     }
 }
