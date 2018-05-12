@@ -28,7 +28,8 @@ public class BibliotecaAppTest {
     private LinkedList<Book> emptyBookList = new LinkedList<Book>();
     private final ByteArrayOutputStream wrongInput = new ByteArrayOutputStream();
     private final ByteArrayOutputStream otherOptionInput = new ByteArrayOutputStream();
-    Book dracula = new Book("Dracula", "Bram Stoker", 1897, true);
+    String DRACULA_NAME = "Dracula";
+    Book dracula = new Book(DRACULA_NAME,"Bram Stoker", 1897, true);
     Book theMagicians = new Book("The Magicians", "Lev Grossman", 2009, true);
     Book casa = new Book("La Casa de los Espiritus", "Isabel Allende", 1982, true);
 
@@ -71,8 +72,8 @@ public class BibliotecaAppTest {
 
     @Test
     public void findBookByName_shouldReturnDracula_whenThereIsABookInitializedWithThatName(){
-        when(bibliotecaAppDao.findByName("Dracula")).thenReturn(dracula);
-        assertThat(bibliotecaApp.findBookByName("Dracula").getName(), is(dracula.getName()));
+        when(bibliotecaAppDao.findByName(DRACULA_NAME)).thenReturn(dracula);
+        assertThat(bibliotecaApp.findBookByName(DRACULA_NAME).getName(), is(dracula.getName()));
     }
 
     @Test
@@ -159,8 +160,8 @@ public class BibliotecaAppTest {
 
     @Test
     public void checkoutBook_shouldReturnAMessageIndicatingTheCheckoutWasSuccessful_whenTheBookIsAvailable(){
-        when(bibliotecaAppDao.findByName("Dracula")).thenReturn(dracula);
-        assertThat(bibliotecaApp.checkoutBook("Dracula"), is("\nThank you! Enjoy the book\n"));
+        when(bibliotecaAppDao.findByName(DRACULA_NAME)).thenReturn(dracula);
+        assertThat(bibliotecaApp.checkoutBook(DRACULA_NAME), is("\nThank you! Enjoy the book\n"));
     }
 
     @Test
@@ -178,17 +179,17 @@ public class BibliotecaAppTest {
 
     @Test
     public void checkoutBook_shouldMakeABookUnavailable_whenTheBookExistsAndIsAvailable(){
-        when(bibliotecaAppDao.findByName("Dracula")).thenReturn(dracula);
-        bibliotecaApp.checkoutBook("Dracula");
+        when(bibliotecaAppDao.findByName(DRACULA_NAME)).thenReturn(dracula);
+        bibliotecaApp.checkoutBook(DRACULA_NAME);
         assertThat(dracula.isAvailable(), is(false));
     }
 
     @Test
     public void listAvailableBooks_shouldNotIncludeTheInformationOfBooksThatAreNotAvailable(){
         dracula.setAvailability(false);
-        when(bibliotecaAppDao.findByName("Dracula")).thenReturn(dracula);
+        when(bibliotecaAppDao.findByName(DRACULA_NAME)).thenReturn(dracula);
         when(bibliotecaAppDao.getBooks()).thenReturn(books);
-        assertThat(bibliotecaApp.listAvailableBooks().contains("Dracula"), is(false));
+        assertThat(bibliotecaApp.listAvailableBooks().contains(DRACULA_NAME), is(false));
     }
 
     @Test
@@ -199,8 +200,8 @@ public class BibliotecaAppTest {
     @Test
     public void returnBook_shouldReturnAMessageIndicatingTheReturnWasSuccessful_whenTheBookToReturnIsUnavailable(){
         dracula.setAvailability(false);
-        when(bibliotecaAppDao.findByName("Dracula")).thenReturn(dracula);
-        assertThat( bibliotecaApp.returnBook("Dracula"), is("\nThank you for returning the book.\n"));
+        when(bibliotecaAppDao.findByName(DRACULA_NAME)).thenReturn(dracula);
+        assertThat( bibliotecaApp.returnBook(DRACULA_NAME), is("\nThank you for returning the book.\n"));
     }
 
     @Test
