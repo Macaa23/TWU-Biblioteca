@@ -6,5 +6,7 @@ public interface MovieDao {
 
     LinkedList<Movie> getAll();
 
-    Movie findByName();
+    Movie findByName(String name);
+
+    void updateMovie(Movie movie);
 }

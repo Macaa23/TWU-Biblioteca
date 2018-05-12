@@ -114,4 +114,14 @@ public class BibliotecaAppTest {
     public void printMenu_shouldReturnAStringContainingReturnBookOption(){
         assertThat(bibliotecaApp.printMenu().contains("Return Book"), is(true));
     }
+
+    @Test
+    public void printMenu_shouldReturnAStringContainingListMoviesOption(){
+        assertThat(bibliotecaApp.printMenu().contains("List Movies"), is(true));
+    }
+
+    @Test
+    public void printMenu_shouldReturnAStringContainingCheckoutMovieOption(){
+        assertThat(bibliotecaApp.printMenu().contains("Checkout Movie"), is(true));
+    }
 }

@@ -2,11 +2,11 @@ package com.twu.biblioteca;
 
 public class Movie {
 
-    String name;
-    int year;
-    String director;
-    double rate;
-    boolean availability;
+    private String name;
+    private int year;
+    private String director;
+    private double rate;
+    private boolean availability;
 
 
     public Movie(String name, int year, String director, double rate, boolean availability) {

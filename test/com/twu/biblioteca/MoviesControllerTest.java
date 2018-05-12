@@ -36,7 +36,7 @@ public class MoviesControllerTest {
     @Test
     public void listMovies_shouldPrintTwoMovies_whenThereAreTwoMoviesRegistered(){
         when(movieDao.getAll()).thenReturn(movies);
-        assertThat(moviesController.listMovies().contains("Inception"), is(true));
+        assertThat(moviesController.listMovies().contains(inception.getName()), is(true));
     }
 
     @Test
@@ -49,7 +49,7 @@ public class MoviesControllerTest {
     @Test
     public void listAvailableMovies_shouldReturnOneMovie_whenThereIsOneMovieAvailable(){
         when(movieDao.getAll()).thenReturn(movies);
-        assertThat(moviesController.listAvailableMovies().contains("Lucy"), is(false));
+        assertThat(moviesController.listAvailableMovies().contains(lucy.getName()), is(false));
     }
 
     @Test
@@ -58,12 +58,23 @@ public class MoviesControllerTest {
         when(movieDao.getAll()).thenReturn(movies);
         assertThat(moviesController.listAvailableMovies(), is("     There Are No Available Books\n"));
     }
-    /*
+
     @Test
     public void checkoutMovie_shouldReturnAMessageIndicatingThecheckoutWasSuccessful_whenTheMovieIsAvailable(){
-        when(movieDao.findByName()).thenReturn(inception);
-        assertThat(moviesController.checkoutMovie("Inception"), is("\nThank you! Enjoy the movie\n"));
+        when(movieDao.findByName(inception.getName())).thenReturn(inception);
+        assertThat(moviesController.checkoutMovie(inception.getName()), is("\nThank you! Enjoy the movie\n"));
     }
 
-    */
+    @Test
+    public void checkoutMovie_shouldReturnAMessageIndicatingThecheckoutWasUnsuccessful_whenTheMovieIsNotAvailable(){
+        when(movieDao.findByName(lucy.getName())).thenReturn(lucy);
+        assertThat(moviesController.checkoutMovie(lucy.getName()), is("\nThat movie is not available.\n"));
+    }
+
+    @Test
+    public void checkoutMovie_shouldReturnAMessageIndicatingThecheckoutWasUnsuccessful_whenTheMovieDoesNotExists(){
+        String name = "Some Name";
+        when(movieDao.findByName(name)).thenReturn(null);
+        assertThat(moviesController.checkoutMovie(name), is("\nThat movie is not in our registries.\n"));
+    }
 }

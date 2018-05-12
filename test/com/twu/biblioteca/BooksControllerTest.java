@@ -38,18 +38,6 @@ public class BooksControllerTest {
     private BooksController booksController;
 
     @Test
-    public void findBookByName_shouldReturnDracula_whenThereIsABookInitializedWithThatName(){
-        when(bookDao.findByName(DRACULA_NAME)).thenReturn(dracula);
-        assertThat(booksController.findBookByName(DRACULA_NAME).getName(), is(dracula.getName()));
-    }
-
-    @Test
-    public void findBookByName_shouldReturnNull_whenThereAreNoBooksInitializedWithTheSearchedName(){
-        when(bookDao.findByName("No Name")).thenReturn(null);
-        assertThat(booksController.findBookByName("No Name"), is(nullValue()));
-    }
-
-    @Test
     public void listAllBooks_shouldReturnADetailedListOfThreeBooks_whenThereAreThreeBooksRegistered(){
         when(bookDao.getAll()).thenReturn(books);
         assertThat(booksController.listAllBooks(), is("     List of all books:\n\n" + "Dracula     Bram Stoker     1897\n" +

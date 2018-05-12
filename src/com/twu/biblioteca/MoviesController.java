@@ -34,4 +34,18 @@ public class MoviesController {
     }
 
 
+    public String checkoutMovie(String name) {
+        Movie requiredMovie = movieDao.findByName(name);
+        if(requiredMovie!= null) {
+            if (requiredMovie.isAvailable()) {
+                requiredMovie.setAvailability(false);
+                movieDao.updateMovie(requiredMovie);
+                return "\nThank you! Enjoy the movie\n";
+            } else {
+                return "\nThat movie is not available.\n";
+            }
+        }else {
+            return "\nThat movie is not in our registries.\n";
+        }
+    }
 }

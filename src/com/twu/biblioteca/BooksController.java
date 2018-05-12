@@ -6,10 +6,6 @@ public class BooksController {
 
     private BookDao bookDao = new BookDaoImpl();
 
-    public Book findBookByName(String bookName) {
-        return bookDao.findByName(bookName);
-    }
-
     public String listAllBooks() {
         LinkedList<Book> allBooks = bookDao.getAll();
         if(allBooks.isEmpty()) return "     There Are No Books Registered\n";
@@ -36,7 +32,7 @@ public class BooksController {
     }
 
     public String checkoutBook(String bookName) {
-        Book requiredBook = findBookByName(bookName);
+        Book requiredBook = bookDao.findByName(bookName);
         if (requiredBook != null) {
             if (requiredBook.isAvailable()) {
                 requiredBook.setAvailability(false);
@@ -49,7 +45,7 @@ public class BooksController {
     }
 
     public String returnBook(String bookName) {
-        Book requiredBook = findBookByName(bookName);
+        Book requiredBook = bookDao.findByName(bookName);
         if (requiredBook != null) {
             if (!requiredBook.isAvailable()) {
                 requiredBook.setAvailability(true);

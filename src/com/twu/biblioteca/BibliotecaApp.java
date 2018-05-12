@@ -8,7 +8,8 @@ public class BibliotecaApp {
     BooksController booksController = new BooksController();
     MoviesController moviesController = new MoviesController();
 
-    private static int QUIT_MENU_OPTION = 4;
+    private static int QUIT_MENU_OPTION = 6;
+    private static int INVALID_OPTION = 0;
 
     public static void main(String[] args) {
 
@@ -19,7 +20,7 @@ public class BibliotecaApp {
         do {
             System.out.println(bibliotecaApp.printMenu());
             option = bibliotecaApp.readMenuOption();
-            if (option == 0) continue;
+            if (option == INVALID_OPTION) continue;
             System.out.println(bibliotecaApp.executeMenuOption(option));
         } while (option != QUIT_MENU_OPTION);
     }
@@ -31,7 +32,9 @@ public class BibliotecaApp {
     public ArrayList<String> getMenu() {
         ArrayList<String> menuOptions = new ArrayList<String>();
         menuOptions.add("List Books");
+        menuOptions.add("List Movies");
         menuOptions.add("Checkout Book");
+        menuOptions.add("Checkout Movie");
         menuOptions.add("Return Book");
         menuOptions.add("Quit");
         return menuOptions;
@@ -59,7 +62,7 @@ public class BibliotecaApp {
             if (numericOption == QUIT_MENU_OPTION) input.close();
             return numericOption;
         } else {
-            return 0;
+            return INVALID_OPTION;
         }
     }
 
@@ -81,18 +84,24 @@ public class BibliotecaApp {
 
     public String executeMenuOption(int option) {
         Scanner input = new Scanner(System.in);
-        String bookName;
+        String loanName;
         String result = "";
         if (option == 1) {
             result = booksController.listAvailableBooks();
         } else if (option == 2) {
+            result = moviesController.listAvailableMovies();
+        } else if (option == 3) {
             System.out.println("    \nEnter the book's name you want to checkout\n");
-            bookName = input.nextLine();
-            result = booksController.checkoutBook(bookName);
-        } else if (option == 3){
+            loanName = input.nextLine();
+            result = booksController.checkoutBook(loanName);
+        } else if (option == 4) {
+            System.out.println("    \nEnter the movie's name you want to checkout\n");
+            loanName = input.nextLine();
+            result = moviesController.checkoutMovie(loanName);
+        } else if (option == 5) {
             System.out.println("    \nEnter the book's name you want to return\n");
-            bookName = input.nextLine();
-            result = booksController.returnBook(bookName);
+            loanName = input.nextLine();
+            result = booksController.returnBook(loanName);
         } else if (option == QUIT_MENU_OPTION) return "Execution Finished. Have a nice day :)";
         return result;
     }
