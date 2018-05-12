@@ -17,7 +17,6 @@ import java.io.PrintStream;
 import java.util.LinkedList;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.core.IsNull.nullValue;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.when;
 
@@ -25,7 +24,6 @@ import static org.mockito.Mockito.when;
 public class BibliotecaAppTest {
 
     private LinkedList<Book> books = new LinkedList<Book>();
-    private LinkedList<Book> emptyBookList = new LinkedList<Book>();
     private final ByteArrayOutputStream wrongInput = new ByteArrayOutputStream();
     private final ByteArrayOutputStream otherOptionInput = new ByteArrayOutputStream();
     String DRACULA_NAME = "Dracula";
@@ -55,8 +53,6 @@ public class BibliotecaAppTest {
     @InjectMocks
     private BibliotecaApp bibliotecaApp;
 
-    @InjectMocks BooksController booksController;
-
     @Rule
     public ExpectedException expectedEx = ExpectedException.none();
 
@@ -64,32 +60,6 @@ public class BibliotecaAppTest {
     public void getWelcomeMessage_shouldReturnAWelcomeMessageForTheUser(){
         BibliotecaApp userInterface = new BibliotecaApp();
         assertThat(userInterface.getWelcomeMessage(), is("Welcome to the Bangalore Public Library System\n\n"));
-    }
-
-    @Test
-    public void findBookByName_shouldReturnDracula_whenThereIsABookInitializedWithThatName(){
-        when(bibliotecaAppDao.findByName(DRACULA_NAME)).thenReturn(dracula);
-        assertThat(booksController.findBookByName(DRACULA_NAME).getName(), is(dracula.getName()));
-    }
-
-    @Test
-    public void findBookByName_shouldReturnNull_whenThereAreNoBooksInitializedWithTheSearchedName(){
-        when(bibliotecaAppDao.findByName("No Name")).thenReturn(null);
-        assertThat(booksController.findBookByName("No Name"), is(nullValue()));
-    }
-
-    @Test
-    public void listAllBooks_shouldReturnADetailedListOfThreeBooks_whenThereAreThreeBooksRegistered(){
-        when(bibliotecaAppDao.getBooks()).thenReturn(books);
-        assertThat(booksController.listAllBooks(), is("     List of all books:\n\n" + "Dracula     Bram Stoker     1897\n" +
-                "The Magicians     Lev Grossman     2009\n" +
-                "La Casa de los Espiritus     Isabel Allende     1982\n"));
-    }
-
-    @Test
-    public void listAllBooks_shouldReturnAMessageIndicatingThatThereAreNoBooks_whenThereAreNoBooksRegistered(){
-        when(bibliotecaAppDao.getBooks()).thenReturn(emptyBookList);
-        assertThat(booksController.listAllBooks(), is("     There Are No Books Registered\n"));
     }
 
     @Test
@@ -141,55 +111,7 @@ public class BibliotecaAppTest {
     }
 
     @Test
-    public void checkoutBook_shouldReturnAMessageIndicatingTheCheckoutWasSuccessful_whenTheBookIsAvailable(){
-        when(bibliotecaAppDao.findByName(DRACULA_NAME)).thenReturn(dracula);
-        assertThat(booksController.checkoutBook(DRACULA_NAME), is("\nThank you! Enjoy the book\n"));
-    }
-
-    @Test
-    public void checkoutBook_shouldReturnAMessageIndicatingTheCheckoutWasUnsuccessful_whenTheBookIsUnavailable(){
-        theMagicians.setAvailability(false);
-        when(bibliotecaAppDao.findByName("The Magicians")).thenReturn(theMagicians);
-        assertThat(booksController.checkoutBook("The Magicians"), is("That book is not available."));
-    }
-
-    @Test
-    public void checkoutBook_shouldReturnAMessageIndicatingTheTitleDoesNotExistsInTheLibrary_whenTheBookHasntBeenCreated(){
-        when(bibliotecaAppDao.findByName("Some Ghost Book")).thenReturn(null);
-        assertThat(booksController.checkoutBook("Some Ghost Book"), is("That book is not in the library registries."));
-    }
-
-    @Test
-    public void checkoutBook_shouldMakeABookUnavailable_whenTheBookExistsAndIsAvailable(){
-        when(bibliotecaAppDao.findByName(DRACULA_NAME)).thenReturn(dracula);
-        booksController.checkoutBook(DRACULA_NAME);
-        assertThat(dracula.isAvailable(), is(false));
-    }
-
-    @Test
-    public void listAvailableBooks_shouldNotIncludeTheInformationOfBooksThatAreNotAvailable(){
-        dracula.setAvailability(false);
-        when(bibliotecaAppDao.findByName(DRACULA_NAME)).thenReturn(dracula);
-        when(bibliotecaAppDao.getBooks()).thenReturn(books);
-        assertThat(booksController.listAvailableBooks().contains(DRACULA_NAME), is(false));
-    }
-
-    @Test
     public void printMenu_shouldReturnAStringContainingReturnBookOption(){
         assertThat(bibliotecaApp.printMenu().contains("Return Book"), is(true));
-    }
-
-    @Test
-    public void returnBook_shouldReturnAMessageIndicatingTheReturnWasSuccessful_whenTheBookToReturnIsUnavailable(){
-        dracula.setAvailability(false);
-        when(bibliotecaAppDao.findByName(DRACULA_NAME)).thenReturn(dracula);
-        assertThat( booksController.returnBook(DRACULA_NAME), is("\nThank you for returning the book.\n"));
-    }
-
-    @Test
-    public void returnBook_shouldReturnAMessageIndicatingTheReturnWasUnsuccessful_whenTheBookIsAvailable(){
-        theMagicians.setAvailability(true);
-        when(bibliotecaAppDao.findByName("The Magicians")).thenReturn(theMagicians);
-        assertThat(booksController.returnBook("The Magicians"), is("That is not a valid book to return."));
     }
 }

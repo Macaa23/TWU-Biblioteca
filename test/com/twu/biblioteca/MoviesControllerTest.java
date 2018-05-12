@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
 import java.util.LinkedList;
 
 @RunWith(MockitoJUnitRunner.class)
-public class BibliotecaAppMovieTest {
+public class MoviesControllerTest {
 
     private LinkedList<Movie> movies = new LinkedList<Movie>();
     Movie inception = new Movie("Inception", 2010, "Christopher Nolan", 8.8, true);
