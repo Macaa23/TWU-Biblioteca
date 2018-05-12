@@ -9,4 +9,6 @@ public interface BibliotecaAppDao {
     Book findByName(String bookName);
 
     void updateBook(Book book);
+
+    LinkedList<Movie> getMovies();
 }

@@ -1,5 +1,6 @@
 package com.twu.biblioteca;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Scanner;
@@ -166,5 +167,21 @@ public class BibliotecaApp {
             result = returnBook(bookName);
         } else if (option == QUIT_MENU_OPTION) return "Execution Finished. Have a nice day :)";
         return result;
+    }
+
+    public String listMovies() {
+        LinkedList<Movie> movies = bibliotecaAppDao.getMovies();
+        if(movies.isEmpty()) return "     There Are No Books Registered\n";
+        String movieList = "     List of all movies:\n\n";
+        Movie tempMovie;
+        for (int i = 0; i < movies.size(); i++) {
+            tempMovie = movies.get(i);
+            movieList += tempMovie.getName() + "     " + tempMovie.getDirector() + "     " + tempMovie.getYear() + "     " + tempMovie.getRate() +"\n";
+        }
+        return movieList;
+    }
+
+    public String listAvailableMovies() {
+        return null;
     }
 }
