@@ -182,6 +182,17 @@ public class BibliotecaApp {
     }
 
     public String listAvailableMovies() {
-        return null;
+        LinkedList<Movie> movies = bibliotecaAppDao.getMovies();
+        String titleMessage = "     List of all available movies:\n\n";
+        String movieList = titleMessage;
+        Movie tempMovie;
+        for (int i = 0; i < movies.size(); i++) {
+            tempMovie = movies.get(i);
+            if(tempMovie.isAvailable()) {
+                movieList += tempMovie.getName() + "     " + tempMovie.getDirector() + "     " + tempMovie.getYear() + "     " + tempMovie.getRate() + "\n";
+            }
+        }
+        if(movieList.equals(titleMessage)) return "     There Are No Available Books\n";
+        return movieList;
     }
 }

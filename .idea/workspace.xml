@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7bb13f41-d9ae-49d4-a271-745aef076cce" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaAppDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaAppDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaAppMovieTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaAppMovieTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/MovieTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/MovieTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,14 +21,12 @@
       <file leaf-file-name="BibliotecaApp.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="163" column="32" lean-forward="true" selection-start-line="163" selection-start-column="32" selection-end-line="163" selection-end-column="32" />
+            <state relative-caret-position="162">
+              <caret line="173" column="59" selection-start-line="173" selection-start-column="59" selection-end-line="173" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1005#1006#0" expanded="true" />
                 <element signature="e#1065#1066#0" expanded="true" />
-                <element signature="e#6485#6486#0" expanded="true" />
-                <element signature="e#6511#6512#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -51,18 +47,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MovieTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/MovieTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
-              <caret line="64" column="47" lean-forward="true" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="97" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="BibliotecaAppTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaAppTest.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -76,11 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BibliotecaAppMovieTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BibliotecaAppMovieTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaAppMovieTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="668">
-              <caret line="48" column="64" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="85" />
+            <state relative-caret-position="522">
+              <caret line="54" column="60" lean-forward="true" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="90" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#376#383#0" expanded="true" />
@@ -140,11 +124,11 @@
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Book.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaAppTest.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaAppDao.java" />
-        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" />
-        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaAppMovieTest.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaAppDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Movie.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/MovieTest.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" />
+        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaAppMovieTest.java" />
       </list>
     </option>
   </component>
@@ -237,9 +221,32 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MovieTest">
+  <component name="RunManager" selected="JUnit.BibliotecaAppMovieTest.listAvailableMovies_shouldReturnErrorMessage_whenThereAreNoMoviesAvailable">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="BibliotecaAppMovieTest.listAvailableMovies_shouldReturnErrorMessage_whenThereAreNoMoviesAvailable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="biblioteca" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.twu.biblioteca.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
+      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.BibliotecaAppMovieTest" />
+      <option name="METHOD_NAME" value="listAvailableMovies_shouldReturnErrorMessage_whenThereAreNoMoviesAvailable" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
     </configuration>
     <configuration name="BibliotecaAppMovieTest.listAvailableMovies_shouldReturnOneMovie_whenThereIsOneMovieAvailable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="biblioteca" />
@@ -254,29 +261,6 @@
       <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
       <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.BibliotecaAppMovieTest" />
       <option name="METHOD_NAME" value="listAvailableMovies_shouldReturnOneMovie_whenThereIsOneMovieAvailable" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="BibliotecaAppMovieTest.listMovies_shouldPrintErrorMessage_whenThereAreNoMoviesRegistered" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="biblioteca" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.twu.biblioteca.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
-      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.BibliotecaAppMovieTest" />
-      <option name="METHOD_NAME" value="listMovies_shouldPrintErrorMessage_whenThereAreNoMoviesRegistered" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -395,19 +379,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="JUnit.BibliotecaAppMovieTest.listMovies_shouldPrintErrorMessage_whenThereAreNoMoviesRegistered" />
       <item itemvalue="JUnit.BibliotecaAppMovieTest.listAvailableMovies_shouldReturnOneMovie_whenThereIsOneMovieAvailable" />
       <item itemvalue="JUnit.MovieTest.getAvailability_shouldReturnTrue_whenThereIsAMovieInitializedWithThatAvailability" />
       <item itemvalue="JUnit.MovieTest.getDirector_shouldReturnChristopherNolan_whenThereIsAMovieInitializedWithThatDirector" />
       <item itemvalue="JUnit.MovieTest" />
+      <item itemvalue="JUnit.BibliotecaAppMovieTest.listAvailableMovies_shouldReturnErrorMessage_whenThereAreNoMoviesAvailable" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BibliotecaAppMovieTest.listAvailableMovies_shouldReturnErrorMessage_whenThereAreNoMoviesAvailable" />
+        <item itemvalue="JUnit.BibliotecaAppMovieTest.listAvailableMovies_shouldReturnOneMovie_whenThereIsOneMovieAvailable" />
         <item itemvalue="JUnit.MovieTest" />
         <item itemvalue="JUnit.MovieTest.getAvailability_shouldReturnTrue_whenThereIsAMovieInitializedWithThatAvailability" />
         <item itemvalue="JUnit.MovieTest.getDirector_shouldReturnChristopherNolan_whenThereIsAMovieInitializedWithThatDirector" />
-        <item itemvalue="JUnit.BibliotecaAppMovieTest.listAvailableMovies_shouldReturnOneMovie_whenThereIsOneMovieAvailable" />
-        <item itemvalue="JUnit.BibliotecaAppMovieTest.listMovies_shouldPrintErrorMessage_whenThereAreNoMoviesRegistered" />
       </list>
     </recent_temporary>
   </component>
@@ -425,32 +409,11 @@
       <workItem from="1525951436644" duration="395000" />
       <workItem from="1525952757457" duration="8416000" />
       <workItem from="1525998541530" duration="498000" />
-      <workItem from="1526145929045" duration="5863000" />
+      <workItem from="1526145929045" duration="6325000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="BibliotecaAppMovieTest_listMovies_shouldPrintTwoMovies_whenThereAreTwoMoviesRegistered - 2018.05.12 at 16h 33m 41s.xml">
-      <configuration name="BibliotecaAppMovieTest.listMovies_shouldPrintTwoMovies_whenThereAreTwoMoviesRegistered" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BibliotecaAppMovieTest_listMovies_shouldPrintTwoMovies_whenThereAreTwoMoviesRegistered - 2018.05.12 at 16h 34m 53s.xml">
-      <configuration name="BibliotecaAppMovieTest.listMovies_shouldPrintTwoMovies_whenThereAreTwoMoviesRegistered" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BibliotecaAppMovieTest_listMovies_shouldPrintTwoMovies_whenThereAreTwoMoviesRegistered - 2018.05.12 at 16h 35m 37s.xml">
-      <configuration name="BibliotecaAppMovieTest.listMovies_shouldPrintTwoMovies_whenThereAreTwoMoviesRegistered" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BibliotecaAppMovieTest_listMovies_shouldPrintTwoMovies_whenThereAreTwoMoviesRegistered - 2018.05.12 at 16h 36m 46s.xml">
-      <configuration name="BibliotecaAppMovieTest.listMovies_shouldPrintTwoMovies_whenThereAreTwoMoviesRegistered" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BibliotecaAppMovieTest_listMovies_shouldPrintTwoMovies_whenThereAreTwoMoviesRegistered - 2018.05.12 at 16h 41m 44s.xml">
-      <configuration name="BibliotecaAppMovieTest.listMovies_shouldPrintTwoMovies_whenThereAreTwoMoviesRegistered" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BibliotecaAppMovieTest_listMovies_shouldPrintErrorMessage_whenThereAreNoMoviesRegistered - 2018.05.12 at 16h 45m 53s.xml">
-      <configuration name="BibliotecaAppMovieTest.listMovies_shouldPrintErrorMessage_whenThereAreNoMoviesRegistered" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BibliotecaAppMovieTest_listMovies_shouldPrintErrorMessage_whenThereAreNoMoviesRegistered - 2018.05.12 at 16h 46m 22s.xml">
-      <configuration name="BibliotecaAppMovieTest.listMovies_shouldPrintErrorMessage_whenThereAreNoMoviesRegistered" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="BibliotecaAppMovieTest_listMovies_shouldPrintErrorMessage_whenThereAreNoMoviesRegistered - 2018.05.12 at 16h 46m 47s.xml">
       <configuration name="BibliotecaAppMovieTest.listMovies_shouldPrintErrorMessage_whenThereAreNoMoviesRegistered" configurationId="JUnit" />
     </history-entry>
@@ -460,9 +423,30 @@
     <history-entry file="BibliotecaAppMovieTest_listAvailableMovies_shouldReturnOneMovie_whenThereIsOneMovieAvailable - 2018.05.12 at 17h 16m 35s.xml">
       <configuration name="BibliotecaAppMovieTest.listAvailableMovies_shouldReturnOneMovie_whenThereIsOneMovieAvailable" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="MovieTest_getAvailability_shouldReturnTrue_whenThereIsAMovieInitializedWithThatAvailability - 2018.05.12 at 17h 25m 07s.xml">
+      <configuration name="MovieTest.getAvailability_shouldReturnTrue_whenThereIsAMovieInitializedWithThatAvailability" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MovieTest_getDirector_shouldReturnChristopherNolan_whenThereIsAMovieInitializedWithThatDirector - 2018.05.12 at 17h 25m 14s.xml">
+      <configuration name="MovieTest.getDirector_shouldReturnChristopherNolan_whenThereIsAMovieInitializedWithThatDirector" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MovieTest_getAvailability_shouldReturnTrue_whenThereIsAMovieInitializedWithThatAvailability - 2018.05.12 at 17h 25m 18s.xml">
+      <configuration name="MovieTest.getAvailability_shouldReturnTrue_whenThereIsAMovieInitializedWithThatAvailability" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MovieTest - 2018.05.12 at 17h 25m 21s.xml">
+      <configuration name="MovieTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BibliotecaAppMovieTest_listAvailableMovies_shouldReturnOneMovie_whenThereIsOneMovieAvailable - 2018.05.12 at 17h 26m 03s.xml">
+      <configuration name="BibliotecaAppMovieTest.listAvailableMovies_shouldReturnOneMovie_whenThereIsOneMovieAvailable" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BibliotecaAppMovieTest_listAvailableMovies_shouldReturnOneMovie_whenThereIsOneMovieAvailable - 2018.05.12 at 17h 27m 37s.xml">
+      <configuration name="BibliotecaAppMovieTest.listAvailableMovies_shouldReturnOneMovie_whenThereIsOneMovieAvailable" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BibliotecaAppMovieTest_listAvailableMovies_shouldReturnOneMovie_whenThereIsOneMovieAvailable - 2018.05.12 at 17h 27m 59s.xml">
+      <configuration name="BibliotecaAppMovieTest.listAvailableMovies_shouldReturnOneMovie_whenThereIsOneMovieAvailable" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17269000" />
+    <option name="totallyTimeSpent" value="17731000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -478,11 +462,11 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993895" visible="true" weight="0.32102564" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4993895" visible="true" weight="0.32102564" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4993895" weight="0.07897436" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6676737" visible="true" weight="0.15018316" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6676737" visible="true" weight="0.15018316" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -896,43 +880,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="163" column="32" lean-forward="true" selection-start-line="163" selection-start-column="32" selection-end-line="163" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1005#1006#0" expanded="true" />
-            <element signature="e#1065#1066#0" expanded="true" />
-            <element signature="e#6485#6486#0" expanded="true" />
-            <element signature="e#6511#6512#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaAppTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2298">
-          <caret line="23" selection-start-line="23" selection-end-line="23" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#754#760#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaAppMovieTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="668">
-          <caret line="48" column="64" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="85" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#376#383#0" expanded="true" />
-            <element signature="e#1253#1260#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/Movie.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
@@ -953,6 +900,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/MovieTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaAppTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2298">
+          <caret line="23" selection-start-line="23" selection-end-line="23" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#754#760#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaAppDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -966,12 +934,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/MovieTest.java">
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="64" column="47" lean-forward="true" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="97" />
+        <state relative-caret-position="162">
+          <caret line="173" column="59" selection-start-line="173" selection-start-column="59" selection-end-line="173" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1005#1006#0" expanded="true" />
+            <element signature="e#1065#1066#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaAppMovieTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="54" column="60" lean-forward="true" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="90" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#376#383#0" expanded="true" />
+            <element signature="e#1253#1260#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -48,6 +48,13 @@ public class BibliotecaAppMovieTest {
     @Test
     public void listAvailableMovies_shouldReturnOneMovie_whenThereIsOneMovieAvailable(){
         when(bibliotecaAppDao.getMovies()).thenReturn(movies);
-        assertThat(bibliotecaApp.listAvailableMovies().contains("Inception"), is(false));
+        assertThat(bibliotecaApp.listAvailableMovies().contains("Lucy"), is(false));
+    }
+
+    @Test
+    public void listAvailableMovies_shouldReturnErrorMessage_whenThereAreNoMoviesAvailable(){
+        inception.setAvailability(false);
+        when(bibliotecaAppDao.getMovies()).thenReturn(movies);
+        assertThat(bibliotecaApp.listAvailableMovies(), is("     There Are No Available Books\n"));
     }
 }
