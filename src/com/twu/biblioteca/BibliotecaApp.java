@@ -5,16 +5,19 @@ import java.util.Scanner;
 
 public class BibliotecaApp {
 
+    private static int QUIT_MENU_OPTION = 6;
+    private static int INVALID_OPTION = 0;
+    private static User session;
+
     BooksController booksController = new BooksController();
     MoviesController moviesController = new MoviesController();
 
-    private static int QUIT_MENU_OPTION = 6;
-    private static int INVALID_OPTION = 0;
 
     public static void main(String[] args) {
 
         BibliotecaApp bibliotecaApp = new BibliotecaApp();
-        int option = 0;
+        UserController userController = new UserController();
+        int option;
 
         System.out.println(bibliotecaApp.getWelcomeMessage());
         do {
@@ -26,7 +29,7 @@ public class BibliotecaApp {
     }
 
     public String getWelcomeMessage() {
-        return "Welcome to the Bangalore Public Library System\n\n";
+        return "Welcome to the Bangalore Public Library System\nPlease Log-in to access:\n\n";
     }
 
     public ArrayList<String> getMenu() {
@@ -106,4 +109,18 @@ public class BibliotecaApp {
         return result;
     }
 
+    public String getUserNumber() {
+        return "Enter you library number:";
+    }
+
+    public String getUserPassword() {
+        return "Enter you password:";
+    }
+
+    public String readUserInput() {
+        Scanner input = new Scanner(System.in);
+        String userInput;
+        userInput = input.next();
+        return userInput;
+    }
 }

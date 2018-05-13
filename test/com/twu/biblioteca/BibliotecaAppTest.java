@@ -10,6 +10,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
+import javax.jws.soap.SOAPBinding;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
@@ -60,7 +61,7 @@ public class BibliotecaAppTest {
     @Test
     public void getWelcomeMessage_shouldReturnAWelcomeMessageForTheUser(){
         BibliotecaApp userInterface = new BibliotecaApp();
-        assertThat(userInterface.getWelcomeMessage(), is("Welcome to the Bangalore Public Library System\n\n"));
+        assertThat(userInterface.getWelcomeMessage(), is("Welcome to the Bangalore Public Library System\nPlease Log-in to access:\n\n"));
     }
 
     @Test
@@ -80,7 +81,7 @@ public class BibliotecaAppTest {
         InputStream in = new ByteArrayInputStream(input.getBytes());
         System.setIn(in);
         option = bibliotecaApp.readMenuOption();
-        assertThat(option, is(1));
+        assertThat(option, is(Integer.parseInt(input)));
     }
 
     @Test
@@ -126,4 +127,31 @@ public class BibliotecaAppTest {
         assertThat(bibliotecaApp.printMenu().contains("Checkout Movie"), is(true));
     }
 
+    @Test
+    public void getUserNumber_shouldReturnAStringAskingForTheLibraryNumber(){
+        assertThat(bibliotecaApp.getUserNumber(), is("Enter you library number:"));
+    }
+
+    @Test
+    public void getUserPassword_shouldReturnAStringAskingForThePassword(){
+        assertThat(bibliotecaApp.getUserPassword(), is("Enter you password:"));
+    }
+
+    @Test
+    public void readUserInput_shouldReturn1234455_whenTheUserInputIs1234455(){
+        String userInput;
+        String input = "1234455";
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
+        userInput = bibliotecaApp.readUserInput();
+        assertThat(userInput, is(input));
+    }
+
+/*
+    @Test
+    public void getSession_shouldReturnAnUser_whenTheUserHasLoggedInTheApplication(){
+        User rocio = new User("123-1234", "supersafepass", "Rocio Sepulveda", "rsepulve@thoughtworks.com",91955238);
+        assertThat(bibliotecaApp.getSession().getLibraryNumber(), is(rocio.getLibraryNumber()));
+    }
+*/
 }

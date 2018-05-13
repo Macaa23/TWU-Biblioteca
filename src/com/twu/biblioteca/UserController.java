@@ -9,10 +9,9 @@ public class UserController {
         else return false;
     }
 
-    public String login(String libraryNumber, String password) {
-        if(!checkLibraryNumberFormat(libraryNumber)) return "\nThe library number must follow the format: ddd-dddd\n";
+    public User login(String libraryNumber, String password) {
         User requiredUser = userDao.findByLibraryNumber(libraryNumber);
-        if(requiredUser == null || !requiredUser.getPassword().equals(password)) return "\nThe library number or password are incorrect.\n";
-        else return "\nLog-in Successful.\n";
+        if(requiredUser != null && requiredUser.getPassword().equals(password)) return requiredUser;
+        else return null;
     }
 }

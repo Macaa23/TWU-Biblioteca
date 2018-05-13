@@ -7,6 +7,7 @@ import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.nullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.mockito.Mockito.when;
 
@@ -35,17 +36,25 @@ public class UserControllerTest {
     }
 
     @Test
-    public void login_shouldReturnAFailureMessage_whenTheUserDoesNotExists(){
+    public void login_shouldReturnNull_whenTheUserExistsAndThePasswordDoesntMatchTheUser(){
+        String incorrectPassword = "password";
+        when(userDao.findByLibraryNumber(rocio.getLibraryNumber())).thenReturn(rocio);
+        assertThat(userController.login(rocio.getLibraryNumber(), incorrectPassword), is(nullValue()));
+    }
+
+    @Test
+    public void login_shouldReturnAnUser_whenTheUserExistsAndThePasswordMatchesTheUser(){
+        when(userDao.findByLibraryNumber(rocio.getLibraryNumber())).thenReturn(rocio);
+        assertThat(userController.login(rocio.getLibraryNumber(), rocio.getPassword()).getLibraryNumber(), is(rocio.getLibraryNumber()));
+    }
+
+/*
+    @Test
+    public void login_shouldReturnNull_whenTheUserDoesNotExists(){
         String falseNumber = "000-0000";
         String falsePassword = "password";
         when(userDao.findByLibraryNumber(falseNumber)).thenReturn(null);
         assertThat(userController.login(falseNumber, falsePassword), is("\nThe library number or password are incorrect.\n"));
-    }
-
-    @Test
-    public void login_shouldReturnAnErrorMessage_whenTheLibraryNumberDoesntFollowTheFormat(){
-        String wrongNumber = "123123-4";
-        assertThat(userController.login(wrongNumber, rocio.getPassword()), is("\nThe library number must follow the format: ddd-dddd\n"));
     }
 
     @Test
@@ -55,10 +64,6 @@ public class UserControllerTest {
         assertThat(userController.login(rocio.getLibraryNumber(), incorrectPassword), is("\nThe library number or password are incorrect.\n"));
     }
 
-    @Test
-    public void login_shouldReturnASuccessMessage_whenTheUserExistsAndThePasswordMatchesTheUser(){
-        when(userDao.findByLibraryNumber(rocio.getLibraryNumber())).thenReturn(rocio);
-        assertThat(userController.login(rocio.getLibraryNumber(), rocio.getPassword()), is("\nLog-in Successful.\n"));
-    }
 
+*/
 }
