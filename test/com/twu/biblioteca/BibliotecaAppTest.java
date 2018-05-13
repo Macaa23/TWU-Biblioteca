@@ -10,7 +10,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import javax.jws.soap.SOAPBinding;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
@@ -51,6 +50,9 @@ public class BibliotecaAppTest {
 
     @Mock
     private BookDao bookDao;
+
+    @Mock
+    private UserController userController;
 
     @InjectMocks
     private BibliotecaApp bibliotecaApp;
@@ -147,11 +149,37 @@ public class BibliotecaAppTest {
         assertThat(userInput, is(input));
     }
 
-/*
+    @Test
+    public void checkLogin_shouldReturnASuccessMessage_whenTheUserCredentialsExistAndAreLinked(){
+        User rocio = new User("123-1234", "supersafepass", "Rocio Sepulveda", "rsepulve@thoughtworks.com",91955238);
+        when(userController.checkLibraryNumberFormat(rocio.getLibraryNumber())).thenReturn(true);
+        when(userController.login(rocio.getLibraryNumber(), rocio.getPassword())).thenReturn(rocio);
+        assertThat(bibliotecaApp.checkLogin(rocio.getLibraryNumber(), rocio.getPassword()), is("\nLog-in Successful.\n"));
+    }
+
+    @Test
+    public void checkLogin_shouldReturnAFailureMessage_whenTheUserCredentialsAreNotLinked(){
+        User rocio = new User("123-1234", "supersafepass", "Rocio Sepulveda", "rsepulve@thoughtworks.com",91955238);
+        when(userController.checkLibraryNumberFormat(rocio.getLibraryNumber())).thenReturn(true);
+        assertThat(bibliotecaApp.checkLogin(rocio.getLibraryNumber(), "Wrong Password"), is("\nThe library number or password are incorrect.\n"));
+    }
+
+    @Test
+    public void checkLogin_shouldReturnAnErrorMessage_whenTheLibraryNumberFormatIsNotCorrect(){
+        String wrongNumber = "01020222a";
+        String password = "somePass";
+        when(userController.checkLibraryNumberFormat(wrongNumber)).thenReturn(false);
+        assertThat(bibliotecaApp.checkLogin(wrongNumber, password), is("\nThe library number must follow the format xxx-xxxx\n"));
+    }
+
+
     @Test
     public void getSession_shouldReturnAnUser_whenTheUserHasLoggedInTheApplication(){
         User rocio = new User("123-1234", "supersafepass", "Rocio Sepulveda", "rsepulve@thoughtworks.com",91955238);
+        when(userController.checkLibraryNumberFormat(rocio.getLibraryNumber())).thenReturn(true);
+        when(userController.login(rocio.getLibraryNumber(), rocio.getPassword())).thenReturn(rocio);
+        bibliotecaApp.checkLogin(rocio.getLibraryNumber(), rocio.getPassword());
         assertThat(bibliotecaApp.getSession().getLibraryNumber(), is(rocio.getLibraryNumber()));
     }
-*/
+
 }

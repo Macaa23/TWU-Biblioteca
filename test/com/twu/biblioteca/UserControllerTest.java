@@ -47,23 +47,4 @@ public class UserControllerTest {
         when(userDao.findByLibraryNumber(rocio.getLibraryNumber())).thenReturn(rocio);
         assertThat(userController.login(rocio.getLibraryNumber(), rocio.getPassword()).getLibraryNumber(), is(rocio.getLibraryNumber()));
     }
-
-/*
-    @Test
-    public void login_shouldReturnNull_whenTheUserDoesNotExists(){
-        String falseNumber = "000-0000";
-        String falsePassword = "password";
-        when(userDao.findByLibraryNumber(falseNumber)).thenReturn(null);
-        assertThat(userController.login(falseNumber, falsePassword), is("\nThe library number or password are incorrect.\n"));
-    }
-
-    @Test
-    public void login_shouldReturnAFailureMessage_whenTheUserExistsAndThePasswordDoesntMatchTheUser(){
-        String incorrectPassword = "password";
-        when(userDao.findByLibraryNumber(rocio.getLibraryNumber())).thenReturn(rocio);
-        assertThat(userController.login(rocio.getLibraryNumber(), incorrectPassword), is("\nThe library number or password are incorrect.\n"));
-    }
-
-
-*/
 }

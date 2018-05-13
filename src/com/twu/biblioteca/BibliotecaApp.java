@@ -7,16 +7,16 @@ public class BibliotecaApp {
 
     private static int QUIT_MENU_OPTION = 6;
     private static int INVALID_OPTION = 0;
-    private static User session;
+    private static User SESSION;
 
     BooksController booksController = new BooksController();
     MoviesController moviesController = new MoviesController();
+    UserController userController = new UserController();
 
 
     public static void main(String[] args) {
 
         BibliotecaApp bibliotecaApp = new BibliotecaApp();
-        UserController userController = new UserController();
         int option;
 
         System.out.println(bibliotecaApp.getWelcomeMessage());
@@ -122,5 +122,19 @@ public class BibliotecaApp {
         String userInput;
         userInput = input.next();
         return userInput;
+    }
+
+    public String checkLogin(String libraryNumber, String password) {
+        if(!userController.checkLibraryNumberFormat(libraryNumber)) return "\nThe library number must follow the format xxx-xxxx\n";
+        User loggedUser = userController.login(libraryNumber, password);
+        if(loggedUser == null) return "\nThe library number or password are incorrect.\n";
+        else{
+            SESSION = loggedUser;
+            return "\nLog-in Successful.\n";
+        }
+    }
+
+    public User getSession() {
+        return SESSION;
     }
 }
