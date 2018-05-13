@@ -24,12 +24,13 @@ import static org.mockito.Mockito.when;
 public class BibliotecaAppTest {
 
     private LinkedList<Book> books = new LinkedList<Book>();
+    private LinkedList<User> borrowers = new LinkedList<User>();
     private final ByteArrayOutputStream wrongInput = new ByteArrayOutputStream();
     private final ByteArrayOutputStream otherOptionInput = new ByteArrayOutputStream();
     String DRACULA_NAME = "Dracula";
-    Book dracula = new Book(DRACULA_NAME,"Bram Stoker", 1897, true);
-    Book theMagicians = new Book("The Magicians", "Lev Grossman", 2009, true);
-    Book casa = new Book("La Casa de los Espiritus", "Isabel Allende", 1982, true);
+    Book dracula = new Book(DRACULA_NAME,"Bram Stoker", 1897, true, borrowers);
+    Book theMagicians = new Book("The Magicians", "Lev Grossman", 2009, true, borrowers);
+    Book casa = new Book("La Casa de los Espiritus", "Isabel Allende", 1982, true, borrowers);
 
     @Before
     public void setUp() {
@@ -124,4 +125,5 @@ public class BibliotecaAppTest {
     public void printMenu_shouldReturnAStringContainingCheckoutMovieOption(){
         assertThat(bibliotecaApp.printMenu().contains("Checkout Movie"), is(true));
     }
+
 }

@@ -19,10 +19,11 @@ public class BooksControllerTest {
 
     private LinkedList<Book> books = new LinkedList<Book>();
     private LinkedList<Book> emptyBookList = new LinkedList<Book>();
-    String DRACULA_NAME = "Dracula";
-    Book dracula = new Book(DRACULA_NAME,"Bram Stoker", 1897, true);
-    Book theMagicians = new Book("The Magicians", "Lev Grossman", 2009, true);
-    Book casa = new Book("La Casa de los Espiritus", "Isabel Allende", 1982, true);
+    private LinkedList<User> borrowers = new LinkedList<User>();
+    private String DRACULA_NAME = "Dracula";
+    private Book dracula = new Book(DRACULA_NAME,"Bram Stoker", 1897, true, borrowers);
+    private Book theMagicians = new Book("The Magicians", "Lev Grossman", 2009, true, borrowers);
+    private Book casa = new Book("La Casa de los Espiritus", "Isabel Allende", 1982, true, borrowers);
 
     @Before
     public void setUp() {
@@ -98,4 +99,11 @@ public class BooksControllerTest {
         when(bookDao.findByName("The Magicians")).thenReturn(theMagicians);
         assertThat(booksController.returnBook("The Magicians"), is("That is not a valid book to return."));
     }
+/*
+    @Test
+    public void checkoutBook_shouldRegisterTheBorrower_whenTheBookExistsAndIsAvailable(){
+        when(bookDao.findByName(DRACULA_NAME)).thenReturn(dracula);
+        booksController.checkoutBook(DRACULA_NAME);
+        assertThat(dracula.getLastBorrower(), is(false));
+    }*/
 }

@@ -1,17 +1,22 @@
 package com.twu.biblioteca;
 
+import java.beans.beancontext.BeanContextMembershipEvent;
+import java.util.LinkedList;
+
 public class Book {
 
     private String name;
     private String author;
     private int year;
     private boolean available;
+    private LinkedList<User> borrowers;
 
-    public Book(String name, String author, int year, boolean available) {
+    public Book(String name, String author, int year, boolean available, LinkedList<User> borrowers) {
         this.name = name;
         this.author = author;
         this.year = year;
         this.available = available;
+        this.borrowers = borrowers;
     }
 
     public String getAuthor() {
@@ -39,5 +44,13 @@ public class Book {
 
     public void setAvailability(boolean availability) {
         this.available = availability;
+    }
+
+    public LinkedList<User> getBorrowers() {
+        return this.borrowers;
+    }
+
+    public User getLastBorrower() {
+        return borrowers.get(borrowers.size()-1);
     }
 }
