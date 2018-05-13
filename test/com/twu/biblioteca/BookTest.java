@@ -87,4 +87,12 @@ public class BookTest {
         assertThat(dracula.getLastBorrower().getName(), is(macarena.getName()));
     }
 
+    @Test
+    public void addBorrower_shouldAddAndReturnAnUser_whenTheBookIsBeingBorrowed(){
+        User rocio = new User("123-1234", "supersafepass", "Rocio Sepulveda", "rsepulve@thoughtworks.com",91955238);
+        Book dracula = new Book("Dracula", "Bram Stoker", 1897, true, borrowers);
+        dracula.addBorrower(rocio);
+        assertThat(dracula.getLastBorrower().getLibraryNumber(), is(rocio.getLibraryNumber()));
+    }
+
 }

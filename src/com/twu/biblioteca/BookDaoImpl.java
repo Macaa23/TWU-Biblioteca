@@ -33,6 +33,7 @@ public class BookDaoImpl implements BookDao {
         for(int i = 0; i < books.size(); i++){
             if(book.getName().equalsIgnoreCase(books.get(i).getName())){
                 books.get(i).setAvailability(book.isAvailable());
+                books.get(i).addBorrower(book.getLastBorrower());
             }
         }
     }

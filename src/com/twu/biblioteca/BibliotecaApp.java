@@ -96,7 +96,7 @@ public class BibliotecaApp {
         } else if (option == 3) {
             System.out.println("    \nEnter the book's name you want to checkout\n");
             loanName = input.nextLine();
-            result = booksController.checkoutBook(loanName);
+            result = booksController.checkoutBook(loanName, getSession());
         } else if (option == 4) {
             System.out.println("    \nEnter the movie's name you want to checkout\n");
             loanName = input.nextLine();

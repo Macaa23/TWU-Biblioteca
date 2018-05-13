@@ -31,10 +31,11 @@ public class BooksController {
         return bookList;
     }
 
-    public String checkoutBook(String bookName) {
+    public String checkoutBook(String bookName, User loggedUser) {
         Book requiredBook = bookDao.findByName(bookName);
         if (requiredBook != null) {
             if (requiredBook.isAvailable()) {
+                requiredBook.addBorrower(loggedUser);
                 requiredBook.setAvailability(false);
                 bookDao.updateBook(requiredBook);
                 return "\nThank you! Enjoy the book\n";

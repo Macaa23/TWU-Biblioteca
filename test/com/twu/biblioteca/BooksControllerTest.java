@@ -55,26 +55,26 @@ public class BooksControllerTest {
     @Test
     public void checkoutBook_shouldReturnAMessageIndicatingTheCheckoutWasSuccessful_whenTheBookIsAvailable(){
         when(bookDao.findByName(DRACULA_NAME)).thenReturn(dracula);
-        assertThat(booksController.checkoutBook(DRACULA_NAME), is("\nThank you! Enjoy the book\n"));
+        assertThat(booksController.checkoutBook(DRACULA_NAME, null), is("\nThank you! Enjoy the book\n"));
     }
 
     @Test
     public void checkoutBook_shouldReturnAMessageIndicatingTheCheckoutWasUnsuccessful_whenTheBookIsUnavailable(){
         theMagicians.setAvailability(false);
         when(bookDao.findByName("The Magicians")).thenReturn(theMagicians);
-        assertThat(booksController.checkoutBook("The Magicians"), is("That book is not available."));
+        assertThat(booksController.checkoutBook("The Magicians", null), is("That book is not available."));
     }
 
     @Test
     public void checkoutBook_shouldReturnAMessageIndicatingTheTitleDoesNotExistsInTheLibrary_whenTheBookHasntBeenCreated(){
         when(bookDao.findByName("Some Ghost Book")).thenReturn(null);
-        assertThat(booksController.checkoutBook("Some Ghost Book"), is("That book is not in the library registries."));
+        assertThat(booksController.checkoutBook("Some Ghost Book", null), is("That book is not in the library registries."));
     }
 
     @Test
     public void checkoutBook_shouldMakeABookUnavailable_whenTheBookExistsAndIsAvailable(){
         when(bookDao.findByName(DRACULA_NAME)).thenReturn(dracula);
-        booksController.checkoutBook(DRACULA_NAME);
+        booksController.checkoutBook(DRACULA_NAME, null);
         assertThat(dracula.isAvailable(), is(false));
     }
 
@@ -99,11 +99,12 @@ public class BooksControllerTest {
         when(bookDao.findByName("The Magicians")).thenReturn(theMagicians);
         assertThat(booksController.returnBook("The Magicians"), is("That is not a valid book to return."));
     }
-/*
+
     @Test
     public void checkoutBook_shouldRegisterTheBorrower_whenTheBookExistsAndIsAvailable(){
+        User rocio = new User("123-1234", "supersafepass", "Rocio Sepulveda", "rsepulve@thoughtworks.com",91955238);
         when(bookDao.findByName(DRACULA_NAME)).thenReturn(dracula);
-        booksController.checkoutBook(DRACULA_NAME);
-        assertThat(dracula.getLastBorrower(), is(false));
-    }*/
+        booksController.checkoutBook(DRACULA_NAME, rocio);
+        assertThat(dracula.getLastBorrower().getLibraryNumber(), is(rocio.getLibraryNumber()));
+    }
 }

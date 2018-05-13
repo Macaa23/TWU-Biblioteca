@@ -53,4 +53,8 @@ public class Book {
     public User getLastBorrower() {
         return borrowers.get(borrowers.size()-1);
     }
+
+    public void addBorrower(User borrower) {
+        borrowers.add(borrower);
+    }
 }
