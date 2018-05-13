@@ -14,4 +14,8 @@ public class UserController {
         if(requiredUser != null && requiredUser.getPassword().equals(password)) return requiredUser;
         else return null;
     }
+
+    public String listUserInfo(User user) {
+        return "    Your Profile\nName: "+ user.getName()+ "\nEmail: " +user.getEmail()+"\nPhone: "+user.getPhone();
+    }
 }

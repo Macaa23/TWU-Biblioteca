@@ -47,4 +47,9 @@ public class UserControllerTest {
         when(userDao.findByLibraryNumber(rocio.getLibraryNumber())).thenReturn(rocio);
         assertThat(userController.login(rocio.getLibraryNumber(), rocio.getPassword()).getLibraryNumber(), is(rocio.getLibraryNumber()));
     }
+
+    @Test
+    public void listUserInfo_shouldReturnAStringContainingTheNameEmailAndPhoneOfAnUser_whenAnUserHasBeenInitializedWithThoseAttributes(){
+        assertThat(userController.listUserInfo(rocio), is("    Your Profile\nName: "+ rocio.getName()+ "\nEmail: " +rocio.getEmail()+"\nPhone: "+rocio.getPhone()));
+    }
 }

@@ -19,13 +19,16 @@ public class BooksController {
     }
 
     public String listAvailableBooks() {
+        String lastBorrower = "";
         LinkedList<Book> allBooks = bookDao.getAll();
         String bookList = "     List of all available books:\n\n";
         Book tempBook;
         for (int i = 0; i < allBooks.size(); i++) {
             tempBook = allBooks.get(i);
             if(tempBook.isAvailable()) {
-                bookList += tempBook.getName() + "     " + tempBook.getAuthor() + "     " + tempBook.getYear() + "\n";
+                if(tempBook.getBorrowers().isEmpty()) lastBorrower = "  -  ";
+                else lastBorrower = tempBook.getLastBorrower().getName();
+                bookList += tempBook.getName() + "     " + tempBook.getAuthor() + "     " + tempBook.getYear() + "     " + lastBorrower + "\n";
             }
         }
         return bookList;

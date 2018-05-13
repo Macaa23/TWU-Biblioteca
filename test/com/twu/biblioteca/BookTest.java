@@ -88,6 +88,12 @@ public class BookTest {
     }
 
     @Test
+    public void getLastBorrower_shouldReturnNull_WhenTheBookHasNeverBeenBorrowed(){
+        Book dracula = new Book("Dracula", "Bram Stoker", 1897, true, borrowers);
+        assertThat(dracula.getLastBorrower(), is(nullValue()));
+    }
+
+    @Test
     public void addBorrower_shouldAddAndReturnAnUser_whenTheBookIsBeingBorrowed(){
         User rocio = new User("123-1234", "supersafepass", "Rocio Sepulveda", "rsepulve@thoughtworks.com",91955238);
         Book dracula = new Book("Dracula", "Bram Stoker", 1897, true, borrowers);

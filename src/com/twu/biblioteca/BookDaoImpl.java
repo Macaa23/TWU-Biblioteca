@@ -5,14 +5,18 @@ import java.util.LinkedList;
 public class BookDaoImpl implements BookDao {
 
     LinkedList<Book> books;
-    LinkedList<User> borrowers;
+    LinkedList<User> draculaBorrowers;
+    LinkedList<User> magiciansBorrowers;
+    LinkedList<User> casaBorrowers;
 
     public BookDaoImpl() {
         books = new LinkedList<Book>();
-        borrowers = new LinkedList<User>();
-        books.add(new Book("Dracula", "Bram Stoker", 1897, true, borrowers));
-        books.add(new Book("The Magicians", "Lev Grossman", 2009, true, borrowers));
-        books.add(new Book("La Casa de los Espiritus", "Isabel Allende", 1982, true, borrowers));
+        draculaBorrowers = new LinkedList<User>();
+        magiciansBorrowers = new LinkedList<User>();
+        casaBorrowers = new LinkedList<User>();
+        books.add(new Book("Dracula", "Bram Stoker", 1897, true, draculaBorrowers));
+        books.add(new Book("The Magicians", "Lev Grossman", 2009, true, magiciansBorrowers));
+        books.add(new Book("La Casa de los Espiritus", "Isabel Allende", 1982, true, casaBorrowers));
     }
 
     @Override

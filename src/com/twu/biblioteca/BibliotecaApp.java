@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class BibliotecaApp {
 
-    private static int QUIT_MENU_OPTION = 6;
+    private static int QUIT_MENU_OPTION = 7;
     private static int INVALID_OPTION = 0;
     private static User SESSION;
 
@@ -18,8 +18,17 @@ public class BibliotecaApp {
 
         BibliotecaApp bibliotecaApp = new BibliotecaApp();
         int option;
+        String libraryNumber, password;
 
         System.out.println(bibliotecaApp.getWelcomeMessage());
+        do {
+            System.out.println(bibliotecaApp.getUserNumber());
+            libraryNumber = bibliotecaApp.readUserInput();
+            System.out.println(bibliotecaApp.getUserPassword());
+            password = bibliotecaApp.readUserInput();
+            System.out.println(bibliotecaApp.checkLogin(libraryNumber, password));
+        }while(SESSION == null);
+
         do {
             System.out.println(bibliotecaApp.printMenu());
             option = bibliotecaApp.readMenuOption();
@@ -39,6 +48,7 @@ public class BibliotecaApp {
         menuOptions.add("Checkout Book");
         menuOptions.add("Checkout Movie");
         menuOptions.add("Return Book");
+        menuOptions.add("My Information");
         menuOptions.add("Quit");
         return menuOptions;
     }
@@ -105,7 +115,9 @@ public class BibliotecaApp {
             System.out.println("    \nEnter the book's name you want to return\n");
             loanName = input.nextLine();
             result = booksController.returnBook(loanName);
-        } else if (option == QUIT_MENU_OPTION) return "Execution Finished. Have a nice day :)";
+        } else if (option == 6) {
+            System.out.println(userController.listUserInfo(SESSION));
+        }else if (option == QUIT_MENU_OPTION) return "Execution Finished. Have a nice day :)";
         return result;
     }
 

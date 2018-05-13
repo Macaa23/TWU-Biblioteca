@@ -51,6 +51,7 @@ public class Book {
     }
 
     public User getLastBorrower() {
+        if(borrowers.isEmpty()) return null;
         return borrowers.get(borrowers.size()-1);
     }
 

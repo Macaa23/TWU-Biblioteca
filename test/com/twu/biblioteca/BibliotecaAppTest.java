@@ -182,4 +182,11 @@ public class BibliotecaAppTest {
         assertThat(bibliotecaApp.getSession().getLibraryNumber(), is(rocio.getLibraryNumber()));
     }
 
+    @Test
+    public void printMenu_shouldReturnAStringContainingMyInformationOptionSoTheUsersCanSeeTheirData(){
+        assertThat(bibliotecaApp.printMenu().contains("My Information"), is(true));
+    }
+
+
+
 }
