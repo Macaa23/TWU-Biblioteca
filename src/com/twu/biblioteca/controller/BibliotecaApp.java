@@ -1,4 +1,6 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.controller;
+
+import com.twu.biblioteca.model.User;
 
 import java.util.ArrayList;
 import java.util.Scanner;

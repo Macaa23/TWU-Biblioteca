@@ -1,5 +1,10 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.controller;
 
+import com.twu.biblioteca.controller.BibliotecaApp;
+import com.twu.biblioteca.controller.UserController;
+import com.twu.biblioteca.dao.BookDao;
+import com.twu.biblioteca.model.Book;
+import com.twu.biblioteca.model.User;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;

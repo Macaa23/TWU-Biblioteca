@@ -1,4 +1,8 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.controller;
+
+import com.twu.biblioteca.model.Movie;
+import com.twu.biblioteca.dao.MovieDao;
+import com.twu.biblioteca.dao.MovieDaoImpl;
 
 import java.util.LinkedList;
 

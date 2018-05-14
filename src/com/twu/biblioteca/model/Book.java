@@ -1,6 +1,5 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.model;
 
-import java.beans.beancontext.BeanContextMembershipEvent;
 import java.util.LinkedList;
 
 public class Book {

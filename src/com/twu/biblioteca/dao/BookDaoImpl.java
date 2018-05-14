@@ -1,4 +1,7 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.dao;
+
+import com.twu.biblioteca.model.Book;
+import com.twu.biblioteca.model.User;
 
 import java.util.LinkedList;
 

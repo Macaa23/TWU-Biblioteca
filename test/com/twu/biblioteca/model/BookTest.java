@@ -1,5 +1,7 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.model;
 
+import com.twu.biblioteca.model.Book;
+import com.twu.biblioteca.model.User;
 import org.junit.Test;
 
 import java.util.LinkedList;

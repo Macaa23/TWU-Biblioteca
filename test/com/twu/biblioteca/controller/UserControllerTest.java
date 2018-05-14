@@ -1,5 +1,8 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.controller;
 
+import com.twu.biblioteca.controller.UserController;
+import com.twu.biblioteca.dao.UserDao;
+import com.twu.biblioteca.model.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;

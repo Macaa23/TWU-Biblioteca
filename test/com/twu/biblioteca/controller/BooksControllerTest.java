@@ -1,5 +1,9 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.controller;
 
+import com.twu.biblioteca.controller.BooksController;
+import com.twu.biblioteca.dao.BookDao;
+import com.twu.biblioteca.model.Book;
+import com.twu.biblioteca.model.User;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

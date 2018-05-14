@@ -1,4 +1,9 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.controller;
+
+import com.twu.biblioteca.model.Book;
+import com.twu.biblioteca.dao.BookDao;
+import com.twu.biblioteca.dao.BookDaoImpl;
+import com.twu.biblioteca.model.User;
 
 import java.util.LinkedList;
 

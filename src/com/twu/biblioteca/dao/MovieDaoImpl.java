@@ -1,4 +1,6 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.dao;
+
+import com.twu.biblioteca.model.Movie;
 
 import java.util.LinkedList;
 

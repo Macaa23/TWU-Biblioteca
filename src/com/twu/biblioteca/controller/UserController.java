@@ -1,4 +1,8 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.controller;
+
+import com.twu.biblioteca.model.User;
+import com.twu.biblioteca.dao.UserDao;
+import com.twu.biblioteca.dao.UserDaoImpl;
 
 public class UserController {
 
